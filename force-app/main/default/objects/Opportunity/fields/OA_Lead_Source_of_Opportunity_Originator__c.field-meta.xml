@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OA_Lead_Source_of_Opportunity_Originator__c</fullName>
+    <externalId>false</externalId>
+    <label>Lead Source of Opportunity Originator</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Advertisements</fullName>
+                <default>false</default>
+                <label>Advertisements</label>
+            </value>
+            <value>
+                <fullName>Cold Call</fullName>
+                <default>false</default>
+                <label>Cold Call</label>
+            </value>
+            <value>
+                <fullName>Conference/ Trade Show</fullName>
+                <default>false</default>
+                <label>Conference/ Trade Show</label>
+            </value>
+            <value>
+                <fullName>Grail Website</fullName>
+                <default>false</default>
+                <label>Grail Website</label>
+            </value>
+            <value>
+                <fullName>Inbound Call</fullName>
+                <default>false</default>
+                <label>Inbound Call</label>
+            </value>
+            <value>
+                <fullName>Deloitte Employee</fullName>
+                <default>false</default>
+                <label>Deloitte Employee</label>
+            </value>
+            <value>
+                <fullName>Personal Contact</fullName>
+                <default>false</default>
+                <label>Personal Contact</label>
+            </value>
+            <value>
+                <fullName>PR/ Read About Us in Media or Online</fullName>
+                <default>false</default>
+                <label>PR/ Read About Us in Media or Online</label>
+            </value>
+            <value>
+                <fullName>Prior Business Relationship</fullName>
+                <default>false</default>
+                <label>Prior Business Relationship</label>
+            </value>
+            <value>
+                <fullName>Webinar</fullName>
+                <default>false</default>
+                <label>Webinar</label>
+            </value>
+            <value>
+                <fullName>Referral</fullName>
+                <default>false</default>
+                <label>Referral</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

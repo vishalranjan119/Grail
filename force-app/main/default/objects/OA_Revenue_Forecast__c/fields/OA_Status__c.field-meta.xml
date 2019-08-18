@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OA_Status__c</fullName>
+    <description>Status of Delivery and Invoicing Milestones</description>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Planned</fullName>
+                <default>true</default>
+                <label>Planned</label>
+            </value>
+            <value>
+                <fullName>Delivery In Progress</fullName>
+                <default>false</default>
+                <label>Delivery In Progress</label>
+            </value>
+            <value>
+                <fullName>Delivery Completed</fullName>
+                <default>false</default>
+                <label>Delivery Completed</label>
+            </value>
+            <value>
+                <fullName>Invoice Approval Pending</fullName>
+                <default>false</default>
+                <label>Invoice Approval Pending</label>
+            </value>
+            <value>
+                <fullName>Invoice Rejected</fullName>
+                <default>false</default>
+                <label>Invoice Rejected</label>
+            </value>
+            <value>
+                <fullName>Invoice Approved</fullName>
+                <default>false</default>
+                <label>Invoice Approved</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

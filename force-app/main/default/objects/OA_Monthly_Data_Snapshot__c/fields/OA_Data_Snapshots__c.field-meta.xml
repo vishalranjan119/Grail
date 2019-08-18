@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OA_Data_Snapshots__c</fullName>
+    <externalId>false</externalId>
+    <label>Data Snapshots</label>
+    <referenceTo>OA_Data_Snapshots__c</referenceTo>
+    <relationshipLabel>Monthly Data Snapshots</relationshipLabel>
+    <relationshipName>datasnapshots</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

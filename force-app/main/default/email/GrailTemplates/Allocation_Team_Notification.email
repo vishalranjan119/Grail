@@ -1,0 +1,9 @@
+Dear Team,
+
+We are pleased to inform that Opportunity ({!Opportunity.Name}) has moved to Proposal stage.
+
+Please align with the Opportunity Owner {!Opportunity.OwnerFullName} for next steps.
+
+Thanks & regards,
+
+{!Opportunity.OwnerFullName}

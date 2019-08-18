@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regional_Target</fullName>
+    <columns>NAME</columns>
+    <columns>OA_Region__c</columns>
+    <columns>Budget__c</columns>
+    <columns>OA_Total_Pre_Sold_Revenue__c</columns>
+    <columns>OA_Total_Risk_Adjusted_Pipeline__c</columns>
+    <columns>OA_Total_Gross_Pipeline__c</columns>
+    <columns>OA_Total_Sold__c</columns>
+    <columns>OA_Year__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Sales_Quota__c.Regional_Target</value>
+    </filters>
+    <label>Regional Target</label>
+</ListView>

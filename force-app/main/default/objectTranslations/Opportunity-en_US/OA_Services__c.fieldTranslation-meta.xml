@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Services --></label>
+    <name>OA_Services__c</name>
+    <picklistValues>
+        <masterLabel>Service 1</masterLabel>
+        <translation><!-- Service 1 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 10</masterLabel>
+        <translation><!-- Service 10 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 11</masterLabel>
+        <translation><!-- Service 11 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 12</masterLabel>
+        <translation><!-- Service 12 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 13</masterLabel>
+        <translation><!-- Service 13 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 14</masterLabel>
+        <translation><!-- Service 14 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 15</masterLabel>
+        <translation><!-- Service 15 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 16</masterLabel>
+        <translation><!-- Service 16 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 17</masterLabel>
+        <translation><!-- Service 17 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 18</masterLabel>
+        <translation><!-- Service 18 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 19</masterLabel>
+        <translation><!-- Service 19 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 2</masterLabel>
+        <translation><!-- Service 2 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 20</masterLabel>
+        <translation><!-- Service 20 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 21</masterLabel>
+        <translation><!-- Service 21 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 22</masterLabel>
+        <translation><!-- Service 22 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 23</masterLabel>
+        <translation><!-- Service 23 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 24</masterLabel>
+        <translation><!-- Service 24 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 25</masterLabel>
+        <translation><!-- Service 25 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 26</masterLabel>
+        <translation><!-- Service 26 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 27</masterLabel>
+        <translation><!-- Service 27 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 28</masterLabel>
+        <translation><!-- Service 28 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 29</masterLabel>
+        <translation><!-- Service 29 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 3</masterLabel>
+        <translation><!-- Service 3 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 30</masterLabel>
+        <translation><!-- Service 30 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 31</masterLabel>
+        <translation><!-- Service 31 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 32</masterLabel>
+        <translation><!-- Service 32 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 33</masterLabel>
+        <translation><!-- Service 33 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 34</masterLabel>
+        <translation><!-- Service 34 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 35</masterLabel>
+        <translation><!-- Service 35 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 4</masterLabel>
+        <translation><!-- Service 4 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 5</masterLabel>
+        <translation><!-- Service 5 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 6</masterLabel>
+        <translation><!-- Service 6 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 7</masterLabel>
+        <translation><!-- Service 7 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 8</masterLabel>
+        <translation><!-- Service 8 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service 9</masterLabel>
+        <translation><!-- Service 9 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

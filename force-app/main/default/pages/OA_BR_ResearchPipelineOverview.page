@@ -1,0 +1,102 @@
+<apex:page controller="OA_BR_ResrchPipelineOverviewCntrl" sidebar="false" readOnly="true">
+    
+    <apex:includeScript value="{! $Resource.jQuery }"/>
+    <apex:includeScript value="{! $Resource.ExporteTableDataJS }"/>
+    <style>
+        .button1 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-size: 14px;
+        margin: 4px 2px;
+        }
+        
+        .alignRight {
+        text-align:right !important;    
+        }
+        
+        .highlightedRow{
+        font-weight: bold;
+        background-color: aliceblue;
+        }
+    </style>
+    
+    <apex:form >
+        <br/><br/>
+        <apex:actionStatus id="status">
+            <apex:facet name="start">
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
+                    &nbsp;
+                </div>
+                <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                    <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                        <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                        <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+        <apex:actionFunction name="onFilterChange" status="status" action="{!prepareReportData}" reRender="reportDataTable" />        
+        <div>
+            <apex:outputLabel value="Sales Pipeline Overview" style="font-size:30px;font-weight:bold;"/>    
+        </div>
+        <div align="right">
+            <a id="export" class="button1" href="javascript.void(0)">Export</a>           
+        </div>
+        <br/><br/>
+        
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="3">  
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedRegion}" title="Region" label="Region" required="true">
+                    <apex:selectOptions value="{!regions}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedYear}" title="Year" label="Year" required="true">
+                    <apex:selectOptions value="{!years}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedMonth}" title="Month" label="Month" required="true">
+                    <apex:selectOptions value="{!months}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageBlockSection>  
+        </apex:pageBlock>
+       
+          <apex:outputLabel value="Note: All monetary amounts reported in USD $000" style="font-weight:bold;"/> 
+        <br/><br/>
+        <apex:pageBlock id="reportDataTable">
+            <apex:pageMessages ></apex:pageMessages>
+            <div id="dvData">
+                <apex:pageBlockTable style="max-height:400px;" value="{!dataList}" var="data">
+                    <apex:column styleClass="{! IF(data.Region == 'Total', 'highlightedRow','')}" headerValue="Region" value="{!data.Region}" />
+                    <apex:column styleClass="{! IF(data.Region == 'Total', 'highlightedRow','')}" headerValue="Account Name" value="{!data.AccountName}" />
+                    <apex:column styleClass="{! IF(data.Region == 'Total', 'highlightedRow','')} alignRight" headerClass="alignRight" headerValue="Budget"  >
+                        <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!data.Budget}" />
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column styleClass="{! IF(data.Region == 'Total', 'highlightedRow','')} alignRight" headerClass="alignRight" headerValue="Sales to date" >
+                    <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!data.Sold}" />
+                        </apex:outputText></apex:column>
+                    <apex:column styleClass="{! IF(data.Region == 'Total', 'highlightedRow','')} alignRight" headerClass="alignRight" headerValue="As % Budget" value="{!data.SoldPercentage}" >
+                    </apex:column>
+                    <apex:column styleClass="{! IF(data.Region == 'Total', 'highlightedRow','')} alignRight" headerClass="alignRight" headerValue="Sales + Total Pipeline" >
+                    <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!data.SoldPlusPipeline}" />
+                        </apex:outputText></apex:column>
+                    <apex:column styleClass="{! IF(data.Region == 'Total', 'highlightedRow','')} alignRight" headerClass="alignRight" headerValue="As % Budget" value="{!data.SoldPlusPipelinePrcntg}" >
+                   
+                    </apex:column>
+                    <apex:column styleClass="{! IF(data.Region == 'Total', 'highlightedRow','')} alignRight" headerClass="alignRight" headerValue="Sales + Weighted Pipeline"  >
+                    <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!data.SoldPlusWPipeline}" />
+                        </apex:outputText></apex:column>
+                    <apex:column styleClass="{! IF(data.Region == 'Total', 'highlightedRow','')} alignRight" headerClass="alignRight" headerValue="As % Budget" value="{!data.SoldPlusWPipelinePrcntg}" >
+                    </apex:column>
+                    
+                </apex:pageBlockTable> 
+            </div>
+        </apex:pageBlock>
+      
+    </apex:form>
+</apex:page>

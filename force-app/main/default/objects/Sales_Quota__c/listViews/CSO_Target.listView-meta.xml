@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CSO_Target</fullName>
+    <columns>NAME</columns>
+    <columns>OA_CSO__c</columns>
+    <columns>OA_Year__c</columns>
+    <columns>OA_Annual_Sales_Quota__c</columns>
+    <columns>OA_Total_Gross_Pipeline__c</columns>
+    <columns>OA_Total_Pre_Sold_Revenue__c</columns>
+    <columns>OA_Total_Risk_Adjusted_Pipeline__c</columns>
+    <columns>OA_Total_Sold__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Sales_Quota__c.Agent_Target</value>
+    </filters>
+    <label>CSO Target</label>
+</ListView>

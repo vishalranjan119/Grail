@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Send notification email to designated approver when delivery forecast requires approval.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Delivery Forecast requires approval</name>
+    <style>none</style>
+    <subject>{!OA_Revenue_Forecast__c.RecordType} Milestone  Approval.</subject>
+    <type>text</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

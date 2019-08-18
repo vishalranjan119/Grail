@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Client Type --></label>
+    <name>OA_Client_Type__c</name>
+    <picklistValues>
+        <masterLabel>External Client</masterLabel>
+        <translation><!-- External Client --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Internal Client</masterLabel>
+        <translation><!-- Internal Client --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

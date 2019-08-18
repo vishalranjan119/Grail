@@ -1,0 +1,102 @@
+<apex:page controller="OA_BR_NetSoldAdditionCntrl" id="thePage" >
+    <style>
+        .button1 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-size: 14px;
+        margin: 4px 2px;
+        
+        }
+         .alignRight {
+        text-align:right !important;    
+    }
+    </style>
+    
+    <apex:includeScript value="{! $Resource.jQuery }"/>
+    <apex:includeScript value="{! $Resource.ExporteTableDataJS }"/>
+   
+    <apex:form id="theForm">
+        <br/><br/>
+        <div>
+            <apex:outputLabel value="Deals Won Since Last BOR Call" style="font-size:30px;font-weight:bold;"/>
+        </div>
+        
+        <div align="right">
+            <a id="export" class="button1" href="javascript.void(0)">Export</a>           
+        </div>
+        <apex:actionStatus id="status">
+            <apex:facet name="start">
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
+                    &nbsp;
+                </div>
+                <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                    <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                        <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                        <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+        <apex:actionFunction name="onFilterChange" status="status" action="{!prepareReportData}"  reRender="reportDataTable" />
+        
+        <br/>
+        <br/>
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="4">
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedRegion}"  label="Region" title="Region" required="true">
+                    <apex:selectOptions value="{!regions}"></apex:selectOptions>
+                </apex:selectList>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedFromMonth}" label="From" title="From" required="true">
+                        <apex:selectOptions value="{!months}"></apex:selectOptions>
+                    </apex:selectList>
+                    <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedFromYear}" title="Year" required="true">
+                        <apex:selectOptions value="{!years}"></apex:selectOptions>
+                    </apex:selectList> 
+                    
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedToMonth}" label="To" title="To" required="true">
+                        <apex:selectOptions value="{!months}"></apex:selectOptions>
+                    </apex:selectList>
+                    <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedToYear}" title="Year" required="true">
+                        <apex:selectOptions value="{!years}"></apex:selectOptions>
+                    </apex:selectList> 
+                    
+                </apex:pageBlockSectionItem>
+                
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:outputLabel value="Note: All monetary amounts reported in USD $000" style="font-weight:bold;"/> 
+        <br/><br/>
+        <apex:pageBlock id="reportDataTable" title="Report Data">
+           <apex:pageMessages ></apex:pageMessages> 
+            
+            <div  id="dvData">
+                <apex:pageBlockTable value="{!reportDataList}" var="data">
+                    <apex:column headerValue="Account" value="{!data.AccountName}" />
+                    <apex:column styleClass="alignRight" headerClass="alignRight" headerValue="Sold As on {!selectedFromMonth}-{!selectedFromYear}"  >
+                        <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{! data.SodlTillFromMonth}"  />
+                        </apex:outputText>  
+                    </apex:column>
+                    <apex:column styleClass="alignRight" headerClass="alignRight" headerValue="Sold As on {!selectedToMonth}-{!selectedToYear} "  >
+                        <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{! data.SodlTillToMonth}"  />
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column styleClass="alignRight" headerClass="alignRight" headerValue="Addition "  >
+                                 <apex:outputText value="{0, number, ###,##0.00}"  >
+                            <apex:param value="{! data.NetAddition}" />
+                        </apex:outputText>
+                    </apex:column>
+                </apex:pageBlockTable> 
+            </div>           
+        </apex:pageBlock>
+            </apex:form>
+</apex:page>

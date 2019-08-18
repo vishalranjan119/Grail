@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- OA Opp Fields on Milestone Screen --></label>
+        <name>OA_Opp_Fields_on_Milestone_Screen</name>
+    </fieldSets>
+    <layouts>
+        <layout>Change Request</layout>
+        <sections>
+            <label><!-- Financials --></label>
+            <section>Financials</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Opportunity Layout</layout>
+        <sections>
+            <label><!-- Additional Project Details --></label>
+            <section>Additional Project Details</section>
+        </sections>
+        <sections>
+            <label><!-- Additional Proposal Details --></label>
+            <section>Additional Proposal Details</section>
+        </sections>
+        <sections>
+            <label><!-- Financials --></label>
+            <section>Financials</section>
+        </sections>
+        <sections>
+            <label><!-- Revenue Forecast --></label>
+            <section>Revenue Forecast</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- Only to Capture Change Request for an Ongoing Project --></description>
+        <label><!-- Change Request --></label>
+        <name>Change_Request</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Default Record Type, to capture all Opportunities (Prospective Projects) --></description>
+        <label><!-- Project --></label>
+        <name>Project</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Delivery Milestone Amount Total does not match the Opportunity Amount. Kindly update the Sales Revenue on Delivery Milestone and retry. --></errorMessage>
+        <name>Check_Delivery_Milestone_Amt_Optty_Amnt</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A Delivery Revenue Forecast record is required to proceed further from &apos;Proposal&apos; stage. --></errorMessage>
+        <name>Check_Delivery_Milestone_Record</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Invoicing Milestone Amount Total does not match the Delivery Milestone Amount. Kindly update the Amount on Invoicing Milestone and retry. --></errorMessage>
+        <name>Check_Invoicing_Milestone_Amt_Opp_Amt</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opportunity cannot be created  directly with Closed Won Stage --></errorMessage>
+        <name>Check_new_Closed_Won_Opportunity</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please Capture Loss Reason --></errorMessage>
+        <name>Lost_Reason</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Only Closed Won Opportunity can have 100% probability. --></errorMessage>
+        <name>Validate_Closed_Won_Opp_Probability</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Change_Request --></label>
+        <name>Change_Request</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close_CR --></label>
+        <name>Close_CR</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Milestone --></label>
+        <name>Create_Milestone</name>
+    </webLinks>
+    <workflowTasks>
+        <description><!-- Opportunity has reached proposal stage. Please collaborate with the Opportunity owner for proposal creation. --></description>
+        <name>Assist_with_Proposal</name>
+        <subject><!-- Assist with Proposal --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- Ensure that proposal document contains below:
+- Analytical plan
+- Proposed solution
+- Illustrative slides
+- Pricing
+- Workplan
+- Case studies --></description>
+        <name>Proposal_Document_Validation</name>
+        <subject><!-- Proposal Document Validation --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- Please reach out to the Allocation team --></description>
+        <name>Send_Request_to_Allocations_team</name>
+        <subject><!-- Send Request to Allocations team --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_new_Closed_Won_Opportunity</fullName>
+    <active>true</active>
+    <description>Users should not allowed to create a &quot;Closed Won&quot; opportunity directly</description>
+    <errorConditionFormula>AND(ISNEW(), ISPICKVAL(StageName, &#39;Closed Won&#39;))</errorConditionFormula>
+    <errorMessage>Opportunity cannot be created  directly with Closed Won Stage</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Quota_Distribution</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Account Quota Distribution</masterLabel>
+    <openType>sidebar</openType>
+    <page>OA_AccountSalesQuota</page>
+    <protected>false</protected>
+</WebLink>

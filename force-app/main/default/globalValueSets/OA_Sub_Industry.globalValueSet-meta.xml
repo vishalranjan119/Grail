@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Durables</fullName>
+        <default>false</default>
+        <label>Durables</label>
+    </customValue>
+    <customValue>
+        <fullName>Electronics</fullName>
+        <default>false</default>
+        <label>Electronics</label>
+    </customValue>
+    <customValue>
+        <fullName>Food &amp; Beverages</fullName>
+        <default>false</default>
+        <label>Food &amp; Beverages</label>
+    </customValue>
+    <customValue>
+        <fullName>Health &amp; Beauty Care</fullName>
+        <default>false</default>
+        <label>Health &amp; Beauty Care</label>
+    </customValue>
+    <customValue>
+        <fullName>Household Products</fullName>
+        <default>false</default>
+        <label>Household Products</label>
+    </customValue>
+    <customValue>
+        <fullName>Oil &amp; Gas</fullName>
+        <default>false</default>
+        <label>Oil &amp; Gas</label>
+    </customValue>
+    <customValue>
+        <fullName>Renewable</fullName>
+        <default>false</default>
+        <label>Renewable</label>
+    </customValue>
+    <customValue>
+        <fullName>Asset Management</fullName>
+        <default>false</default>
+        <label>Asset Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Credit Cards</fullName>
+        <default>false</default>
+        <label>Credit Cards</label>
+    </customValue>
+    <customValue>
+        <fullName>Insurance</fullName>
+        <default>false</default>
+        <label>Insurance</label>
+    </customValue>
+    <customValue>
+        <fullName>Investment Banking</fullName>
+        <default>false</default>
+        <label>Investment Banking</label>
+    </customValue>
+    <customValue>
+        <fullName>PE, VC, Hedge Fund</fullName>
+        <default>false</default>
+        <label>PE, VC, Hedge Fund</label>
+    </customValue>
+    <customValue>
+        <fullName>Retail Banking</fullName>
+        <default>false</default>
+        <label>Retail Banking</label>
+    </customValue>
+    <customValue>
+        <fullName>Hardware &amp; Equipment</fullName>
+        <default>false</default>
+        <label>Hardware &amp; Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Software &amp; Services</fullName>
+        <default>false</default>
+        <label>Software &amp; Services</label>
+    </customValue>
+    <customValue>
+        <fullName>Telecom (Hardware)</fullName>
+        <default>false</default>
+        <label>Telecom (Hardware)</label>
+    </customValue>
+    <customValue>
+        <fullName>Telecom (Software)</fullName>
+        <default>false</default>
+        <label>Telecom (Software)</label>
+    </customValue>
+    <customValue>
+        <fullName>Biotechnology</fullName>
+        <default>false</default>
+        <label>Biotechnology</label>
+    </customValue>
+    <customValue>
+        <fullName>Diagnostics</fullName>
+        <default>false</default>
+        <label>Diagnostics</label>
+    </customValue>
+    <customValue>
+        <fullName>Drugs/Pharmaceuticals</fullName>
+        <default>false</default>
+        <label>Drugs/Pharmaceuticals</label>
+    </customValue>
+    <customValue>
+        <fullName>Generic/Speciality Pharma</fullName>
+        <default>false</default>
+        <label>Generic/Speciality Pharma</label>
+    </customValue>
+    <customValue>
+        <fullName>Healthcare Dist</fullName>
+        <default>false</default>
+        <label>Healthcare Dist</label>
+    </customValue>
+    <customValue>
+        <fullName>Healthcare Providers/Institution</fullName>
+        <default>false</default>
+        <label>Healthcare Providers/Institution</label>
+    </customValue>
+    <customValue>
+        <fullName>Medical Devices/Supply</fullName>
+        <default>false</default>
+        <label>Medical Devices/Supply</label>
+    </customValue>
+    <customValue>
+        <fullName>Nutraceuticals</fullName>
+        <default>false</default>
+        <label>Nutraceuticals</label>
+    </customValue>
+    <customValue>
+        <fullName>Tools</fullName>
+        <default>false</default>
+        <label>Tools</label>
+    </customValue>
+    <customValue>
+        <fullName>Others</fullName>
+        <default>false</default>
+        <label>Others</label>
+    </customValue>
+    <masterLabel>Sub-Industry</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

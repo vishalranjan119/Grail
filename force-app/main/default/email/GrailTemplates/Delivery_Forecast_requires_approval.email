@@ -1,0 +1,7 @@
+Dear {!OA_Revenue_Forecast__c.OA_Project_Owner__c}, 
+
+A new {!OA_Revenue_Forecast__c.RecordType} milestone has been submitted for your approval. Please visit the link below or reply either Approve or Reject to either approve or reject it. 
+
+{!OA_Revenue_Forecast__c.Link} 
+
+Thanks!

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Budget Decision Maker</fullName>
+        <default>false</default>
+        <label>Budget Decision Maker</label>
+    </customValue>
+    <customValue>
+        <fullName>Individual Contributor</fullName>
+        <default>false</default>
+        <label>Individual Contributor</label>
+    </customValue>
+    <customValue>
+        <fullName>Researcher</fullName>
+        <default>false</default>
+        <label>Researcher</label>
+    </customValue>
+    <customValue>
+        <fullName>Decision Influencer</fullName>
+        <default>false</default>
+        <label>Decision Influencer</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <masterLabel>Role</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

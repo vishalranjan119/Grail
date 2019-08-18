@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validate_Closed_Won_Opp_Probability</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(
+AND(
+ISPICKVAL(StageName, &#39;Closed Won&#39;),
+Probability != 1
+),
+AND(
+NOT(ISPICKVAL(StageName, &#39;Closed Won&#39;)),
+Probability = 1
+)
+)</errorConditionFormula>
+    <errorMessage>Only Closed Won Opportunity can have 100% probability.</errorMessage>
+</ValidationRule>

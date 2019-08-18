@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Total Sales Revenue, prior to the current Change Request --></help>
+    <label><!-- Previous Sales Revenue --></label>
+    <name>OA_Previous_Sales_Revenue__c</name>
+</CustomFieldTranslation>

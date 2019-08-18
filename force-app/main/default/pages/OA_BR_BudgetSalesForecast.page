@@ -1,0 +1,111 @@
+<apex:page controller="OA_BR_BudgetSalesForecastCntrl"  lightningStylesheets="true">
+
+  <style>
+        .button1 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-size: 14px;
+        margin: 4px 2px;
+        }
+      
+      .alignRight {
+      text-align:right !important;    
+      }
+      .highlightedRow{
+      font-weight: bold;
+      background-color: aliceblue;
+      }
+    </style>
+    
+    
+    <apex:includeScript value="{! $Resource.jQuery }"/>
+    <apex:includeScript value="{! $Resource.ExporteTableDataJS }"/>
+    <apex:form >
+        <br/><br/>
+        <apex:actionStatus id="status">
+                <apex:facet name="start">
+                    <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
+                        &nbsp;
+                    </div>
+                    <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                        <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                            <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                            <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                        </div>
+                    </div>
+                </apex:facet>
+            </apex:actionStatus>
+        <div align="right">
+            <a id="export" class="button1" href="javascript.void(0)">Export</a>           
+        </div>
+        <div>
+            <apex:outputLabel value="Three Month Forward Outlook" style="font-size:30px;font-weight:bold;"/>    
+        </div>
+        
+        
+       
+        <apex:actionFunction name="onFilterChange" status="status" action="{!reportTableData}" reRender="dataTable,chart,msg" />
+        <br/><br/>
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="3">  
+                 <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedRegion}" title="Region" label="Region" required="true" >
+                    <apex:selectOptions value="{!regionList}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedYear}" title="Year" label="Year" required="true">
+                    <apex:selectOptions value="{!years}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!snapshotMonth}" title="Month" label="Month" required="true" >
+                    <apex:selectOptions value="{!months}"></apex:selectOptions>
+                </apex:selectList>
+               
+            </apex:pageBlockSection>  
+        </apex:pageBlock>
+        <apex:pageMessages id="msg"></apex:pageMessages>
+          <apex:outputLabel value="Note: All monetary amounts reported in USD $000" style="font-weight:bold;"/> 
+        <br/><br/>
+        <apex:pageBlock id="dataTable">  
+            <div id="dvData">
+                <apex:pageBlockTable value="{!dataList}" var="a" styleClass="slds-table slds-table--bordered slds-table--striped">
+                    <apex:column styleClass="{! IF(a.region == 'Global', 'highlightedRow','')}" headerValue="Region" value="{!a.region}"></apex:column>
+                    <apex:column styleClass="{! IF(a.region == 'Global', 'highlightedRow','')}" headerValue="Month" value="{!a.month}"></apex:column>
+                    <apex:column styleClass="{! IF(a.region == 'Global', 'highlightedRow','')} alignRight" headerClass="alignRight" headerValue="Budget" >
+                    <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!a.Budget}"/>
+                                </apex:outputText>
+                    </apex:column>
+                    <apex:column styleClass="{! IF(a.region == 'Global', 'highlightedRow','')} alignRight" headerClass="alignRight" headerValue="Sold" >
+                    <apex:outputText value="{0, number, ###,##0}" >
+                                    <apex:param value="{!a.totalSold}"/>
+                                </apex:outputText>
+                    </apex:column>
+                   <!-- <apex:column styleClass="{! IF(a.region == 'Global', 'highlightedRow','')} alignRight" headerClass="alignRight" headerValue="Sold" value="{!a.sold}"></apex:column>-->
+                    <apex:column styleClass="{! IF(a.region == 'Global', 'highlightedRow','')} alignRight" headerClass="alignRight" headerValue="Budget Variance" >
+                     <apex:outputText value="{0, number, ###,##0.00}" >
+                                    <apex:param value="{!a.surplus}"/>
+                                </apex:outputText></apex:column>
+                      <apex:column styleClass="{! IF(a.region == 'Global', 'highlightedRow','')} alignRight"  headerClass="alignRight" headerValue="Yet To Be Identified" >
+                     <apex:outputText value="{0, number, ###,##0.00}" >
+                                    <apex:param value="{!a.yettobeIdentified}"/>
+                                </apex:outputText></apex:column>
+                    <apex:column styleClass="{! IF(a.region == 'Global', 'highlightedRow','')} alignRight" headerClass="alignRight" headerValue="Weighted Pipeline" >
+                     <apex:outputText value="{0, number, ###,##0.00}" >
+                                    <apex:param value="{!a.pipeline}"/>
+                                </apex:outputText></apex:column>
+                  
+                    <apex:column styleClass="{! IF(a.region == 'Global', 'highlightedRow','')} alignRight"  headerClass="alignRight" headerValue="Forecast" >
+                     <apex:outputText value="{0, number, ###,##0.00}" >
+                                    <apex:param value="{!a.forecast}"/>
+                                </apex:outputText></apex:column>
+                    <apex:column styleClass="{! IF(a.region == 'Global', 'highlightedRow','')} alignRight"  headerClass="alignRight" headerValue="Variance" >
+                     <apex:outputText value="{0, number, ###,##0.00}" >
+                                    <apex:param value="{!a.Variance}"/>
+                                </apex:outputText></apex:column>
+                </apex:pageBlockTable>
+            </div>
+        </apex:pageBlock>
+        
+   </apex:form>
+</apex:page>

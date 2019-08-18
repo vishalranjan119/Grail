@@ -1,0 +1,175 @@
+<apex:page controller="OA_BR_HistoricSoldCntrl" id="thePage" sidebar="false" >
+    <apex:includeScript value="{! $Resource.jQuery }"/>
+    <!--<apex:includeScript value="{!$Resource.HighCharts_Jquery}" /> -->
+    <apex:includeScript value="{!$Resource.HighChart_highcharts}" /> 
+    <apex:includeScript value="{!$Resource.HighChart_Exporting}" />
+    <style>
+        .button1 {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            font-size: 14px;
+            margin: 4px 2px;        
+        }
+        .alignRight {
+            text-align:right !important;    
+        } 
+        
+    </style>
+    
+    <apex:includeScript value="{! $Resource.ExporteTableDataJS }"/>
+    <apex:form >    
+        <br/>
+        <div>
+            <apex:outputLabel value="Model 1 (By % Of Sales)" style="font-size:30px;font-weight:bold;"/>
+        </div>
+        
+        <div align="right">
+            <a id="report" class="button1" target="_blank" href="/{!reportId}">Report</a>      
+            <!--a id="export" class="button1" href="javascript.void(0)">Export</a-->
+        </div>
+        <br/>
+        <br/>
+        <apex:actionStatus id="status">
+            <apex:facet name="start">
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
+                    &nbsp;
+                </div>
+                <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                    <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                        <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                        <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+        <apex:actionFunction name="onFilterChange" status="status" action="{!prepareReportData}" reRender="reportDataTable" />        
+        <br/>
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="3">
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedRegion}" label="Region" title="Region" required="true">
+                    <apex:selectOptions value="{!regions}"></apex:selectOptions>
+                </apex:selectList>
+                
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedYear}" label="Year" title="Year" required="true">
+                    <apex:selectOptions value="{!years}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedMonth}" label="Month" title="Month" required="true">
+                    <apex:selectOptions value="{!months}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:outputPanel id="reportDataTable">
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlock >
+                <br/><br/>
+                <div>
+                    <h2>
+                        This current model would project {!selectedYear} sales ~{!yearEndForecast}.
+                    </h2>
+                </div>
+                <br/><br/>
+                <div id="dvData">
+                    <h2 class="mainTitle">Sales Overview</h2>
+                    <br/><br/>
+                    <apex:pageBlockTable value="{!dataList}" var="data">                
+                        <apex:column width="9%" headerValue="Year" value="{!data.Year}" style="{!IF(CONTAINS(data.Year, 'Sold'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;')}"/>
+                        <apex:repeat value="{!monthList}" var="month" >
+                            <apex:column width="7%" headerValue="{!month}"  styleClass="alignRight" headerClass="alignRight" style="{!IF(CONTAINS(data.Year, 'Sold'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;')}"> 
+                                   <apex:outputText value="{0, number, ###,##0}" id="myNumberDisplay" >
+        <apex:param value="{!IF(data.monthlySoldMap[month]==0,'',data.monthlySoldMap[month])}"/>
+    </apex:outputText></apex:column>   
+                
+                        </apex:repeat>     
+                        <apex:column styleClass="alignRight" headerClass="alignRight" width="7%" headerValue="Total"  style="{!IF(CONTAINS(data.Year, 'Sold'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;')}" > 
+                       <apex:outputText value="{0, number, ###,##0}" id="myNumberDisplay" >
+        <apex:param value="{!data.YearEndSold_budget}"/>
+    </apex:outputText></apex:column>   
+                                  
+                    </apex:pageBlockTable>
+                    <br/><br/>
+                    <h2 class="mainTitle">Sales Overview In Percentage</h2>
+                    <br/><br/>
+                    <apex:pageBlockTable value="{!dataList}" var="data">
+                        <apex:column headerValue="Year" style="{!IF(CONTAINS(data.PYear, 'Budget'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;')}"  value="{!data.PYear}" rendered="{!data.PYear != 'Target' && data.PYear != 'Variance'}" />
+                        <apex:repeat value="{!monthList}" var="month">
+                            <apex:column headerValue="{!month}" width="7%"  rendered="{!data.PYear != 'Target' && data.PYear != 'Variance'}"  styleClass="alignRight" headerClass="alignRight" style="{!IF(CONTAINS(data.Year, 'Sold'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;')}">                
+                             <apex:outputText value="{!IF(data.monthlySoldPrcntgMap[month]== 0,' ',data.monthlySoldPrcntgMap[month])}" />
+                            </apex:column>
+                            </apex:repeat>     
+                        
+                    </apex:pageBlockTable>
+                </div>
+            </apex:pageBlock>
+           
+               <apex:outputLabel value="Note: All monetary amounts reported in USD $000" style="font-weight:bold;"/> 
+        </apex:outputPanel>
+        <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+    </apex:form>  <head>
+    <script type="text/javascript">
+            $.noConflict();
+            $(document).ready(function(){
+                console.log('On load');
+                getDataForHighChart();
+            
+            });
+        
+            function getDataForHighChart() {
+                var a = {!dataList};
+                                 console.log('---'+a);       
+                    function(result, event){
+                        if (event.status) {
+                            var clabels=result.chartLabels ;
+                            var cData=result.chartData ;
+                            //alert('---clabels:'+clabels+'----cData:'+cData);
+                            
+                            if(clabels.length>0){
+                                GenerateChart(clabels,cData);
+                            }
+                        }
+                    }, 
+                    {escape: true}
+                );
+            }
+            function GenerateChart(chartlabels,count){  
+                $('#container').highcharts({
+                    title: {
+                        text: 'No.of opportunities grouped by Stage',
+                        x: -20 //center
+                    },
+                    subtitle: {
+                        text: 'Source: Opportunity Records',
+                        x: -20
+                    },
+                    xAxis: {
+                        categories: chartlabels
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'no.of opportunities'
+                        },
+                        plotLines: [{
+                            value: 0,
+                            width: 1,
+                            color: '#808080'
+                        }]
+                    },
+                    tooltip: {
+                        valueSuffix: ''
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'right',
+                        verticalAlign: 'middle',
+                        borderWidth: 0
+                    },
+                    series: [{
+                        name: 'Number of Opportunity',
+                        data: count
+                    }]
+                };
+            }
+                                           </script></head>
+</apex:page>

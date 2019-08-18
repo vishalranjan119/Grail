@@ -1,0 +1,119 @@
+<apex:page controller="OA_BR_HistoricUnWeightedPipelineCntrl" id="thePage" >
+    <style>
+        .button1 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-size: 14px;
+        margin: 4px 2px;        
+        }
+        .alignRight {
+        text-align:right !important;    
+        }
+    </style>
+    <apex:includeScript value="{! $Resource.jQuery }"/>
+    <apex:includeScript value="{! $Resource.ExporteTableDataJS }"/>
+    <apex:form >
+        <br/>
+        <div>
+            <apex:outputLabel value="Unweighted Pipeline Trend" style="font-size:30px;font-weight:bold;"/>
+        </div>
+        
+        <div align="right">
+            <a id="report" class="button1" target="_blank" href="/{!reportId}">Report</a>
+            <!--a id="export" class="button1" href="javascript.void(0)">Export</a-->
+        </div>
+        <br/>
+        <br/>
+        <apex:actionStatus id="status">
+            <apex:facet name="start">
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
+                    &nbsp;
+                </div>
+                <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                    <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                        <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                        <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+        <apex:actionFunction name="onFilterChange" status="status" action="{!prepareReportData}" reRender="reportDataTable" />        
+        <br/>
+        <!--apex:outputPanel>
+<apex:chart height="400" width="700" animate="true" legend="true" data="{!monthList}">
+<apex:legend position="left"/>
+<apex:axis type="Numeric" position="left" title="Volatility" grid="true"
+fields="data1,data2,data3">
+<apex:chartLabel />
+</apex:axis>
+<apex:axis type="Category" position="bottom" title="Month" grid="true"
+fields="name">
+<apex:chartLabel />
+</apex:axis>
+<apex:lineSeries axis="left" xField="name" yField="data1" 
+strokeColor="#0000FF" strokeWidth="4"/>
+<apex:lineSeries axis="left" fill="true" xField="name" yField="data2"
+markerType="cross" markerSize="4" markerFill="#FF0000"/>
+<apex:lineSeries axis="left" xField="name" yField="data3" 
+markerType="circle" markerSize="4" markerFill="#8E35EF">
+<apex:chartTips height="20" width="120"/>
+</apex:lineSeries>
+</apex:chart>
+</apex:outputPanel-->
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="3">
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedRegion}" label="Region" title="Region" required="true">
+                    <apex:selectOptions value="{!regions}"></apex:selectOptions>
+                </apex:selectList>
+                
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedYear}" label="Year" title="Year" required="true">
+                    <apex:selectOptions value="{!years}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedMonth}" label="Month" title="Month" required="true">
+                    <apex:selectOptions value="{!months}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        <apex:outputPanel id="reportDataTable">
+            <apex:pageMessages ></apex:pageMessages>
+            
+            <apex:pageBlock >
+                <div id="dvData">
+                    <h2 class="mainTitle">Unweighted Pipeline Overview</h2>
+                    <br/><br/>
+                    <apex:pageBlockTable value="{!dataList}" var="data">                
+                        <apex:column style=" {!IF(CONTAINS(data.PYear, 'Budget'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;')}" headerValue="Year" value="{!data.Year}" />
+                        <apex:repeat value="{!monthList}" var="month" >
+                            <apex:column styleClass="alignRight" headerClass="alignRight" headerValue="{!month}" style="{!IF(CONTAINS(data.Year, 'Pipeline'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;' )}" >
+                                <apex:outputText value="{0, number, ###,##0}" id="myNumberDisplay" >
+                                    <apex:param value="{!IF(data.monthlyPipelineMap[month]==0,'',data.monthlyPipelineMap[month])}"/>
+                                </apex:outputText></apex:column>
+                            
+                        </apex:repeat>     
+                        <apex:column styleClass="alignRight" headerClass="alignRight" style=" {!IF(CONTAINS(data.Year, 'Pipeline'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;' )}" headerValue="Total"  > 
+                            <apex:outputText value="{0, number, ###,##0}" id="myNumberDisplay" >
+                                <apex:param value="{!data.YearEndSold_budget}"/>
+                            </apex:outputText>
+                        </apex:column>            
+                    </apex:pageBlockTable>
+                    <br/><br/>
+                    <h2 class="mainTitle">Unweighted Pipeline Overview In Percentage</h2>
+                    <br/><br/>
+                    <apex:pageBlockTable value="{!dataList}" var="data">
+                        <apex:column width="11%" headerValue="Year" value="{!data.PYear}" style="{!IF(CONTAINS(data.PYear, 'Budget'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;')} " rendered="{!data.PYear != 'Target' && data.PYear != 'Variance' }" />
+                        <apex:repeat value="{!monthList}" var="month">
+                            <apex:column headerValue="{!month}"   width="7.33%" style=" {!IF(CONTAINS(data.PYear, 'Budget'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;')}"  styleClass="alignRight" headerClass="alignRight"  rendered="{!data.PYear != 'Target' && data.PYear != 'Variance'}" >                
+                                <apex:outputText value="{!IF(data.monthlyPipelinePrcntgMap[month]!=0,data.monthlyPipelinePrcntgMap[month],' ')}" />
+                            </apex:column>                
+                        </apex:repeat> 
+                    </apex:pageBlockTable>
+                </div>
+            </apex:pageBlock>
+            
+            <apex:outputLabel value="Note: All monetary amounts reported in USD $000" style="font-weight:bold;"/> 
+        </apex:outputPanel>
+    </apex:form>  
+</apex:page>

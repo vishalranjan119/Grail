@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Status --></label>
+    <name>OA_Status__c</name>
+    <picklistValues>
+        <masterLabel>Delivery Completed</masterLabel>
+        <translation><!-- Delivery Completed --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Delivery In Progress</masterLabel>
+        <translation><!-- Delivery In Progress --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Invoice Approval Pending</masterLabel>
+        <translation><!-- Invoice Approval Pending --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Invoice Approved</masterLabel>
+        <translation><!-- Invoice Approved --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Invoice Rejected</masterLabel>
+        <translation><!-- Invoice Rejected --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Planned</masterLabel>
+        <translation><!-- Planned --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

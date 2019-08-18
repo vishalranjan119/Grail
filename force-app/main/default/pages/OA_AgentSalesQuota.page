@@ -1,0 +1,47 @@
+<apex:page standardController="Sales_Quota__c" extensions="OA_AgentSalesQuotaController" sidebar="false">
+    <apex:slds />
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock title="CSO's Monthly Quota">
+            <apex:pageBlockSection title="Sales Quota Details" collapsible="false" columns="2">
+            	<apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Quota Year" style="font-weight:bold"/> {!yearSelected}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Region" style="font-weight:bold"/> {!region}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >    
+                    <apex:outputLabel value="Regional Sales Quota" style="font-weight:bold"/> {!regionalSalesQuota}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Total Sold Revenue" style="font-weight:bold"/> {!totalSoldRev}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Total Weighted Pipeline" style="font-weight:bold"/> {!totalWeightedPipeline}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >	
+                    <apex:outputLabel value="Total Unweighted Pipeline" style="font-weight:bold"/> {!totalunWeightedPipeline}
+            	</apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:outputPanel >
+                <apex:pageBlockSection collapsible="false" columns="1" title="CSO Quota Details for {!CSOSelected}">
+                    <apex:pageBlockTable value="{!displayMap}" var="agent" id="agentTable">
+                        <apex:column headerValue="Month">
+                            <apex:outputField value="{!displayMap[agent].OA_Month__c}" html-disabled="true"/>
+                        </apex:column>    
+                        <apex:column headerValue="Sales Quota">
+                        	<apex:inputField value="{!displayMap[agent].OA_Monthly_Quota__c}"></apex:inputField>
+                        </apex:column> 
+                        <apex:column headerValue="Stretch Quota">
+                        	<apex:inputField value="{!displayMap[agent].OA_Monthly_Stretch_Quota__c}"></apex:inputField>
+                        </apex:column> 
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+            <apex:pageblockButtons location="bottom">
+        	    <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageblockButtons>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

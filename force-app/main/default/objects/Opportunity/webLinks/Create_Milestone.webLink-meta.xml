@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Milestone</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <height>600</height>
+    <linkType>page</linkType>
+    <masterLabel>Manage Milestone</masterLabel>
+    <openType>sidebar</openType>
+    <page>OA_CreateMilestone</page>
+    <protected>false</protected>
+</WebLink>

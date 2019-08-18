@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OA_CY_Revenue__c</fullName>
+    <externalId>false</externalId>
+    <label>CY Revenue</label>
+    <summarizedField>OA_Revenue_Forecast__c.OA_Total_Sales_Revenue_Incl_CRs__c</summarizedField>
+    <summaryFilterItems>
+        <field>OA_Revenue_Forecast__c.OA_Revenue_Flow__c</field>
+        <operation>equals</operation>
+        <value>C</value>
+    </summaryFilterItems>
+    <summaryForeignKey>OA_Revenue_Forecast__c.OA_Opportunity__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

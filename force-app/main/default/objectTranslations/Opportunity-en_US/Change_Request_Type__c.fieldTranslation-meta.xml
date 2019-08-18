@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Change Request Type --></label>
+    <name>Change_Request_Type__c</name>
+    <picklistValues>
+        <masterLabel>Scope Change</masterLabel>
+        <translation><!-- Scope Change --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Timeline Change</masterLabel>
+        <translation><!-- Timeline Change --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

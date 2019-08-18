@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Monthly Quota</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Monthly Quotas</value>
+    </caseValues>
+    <layouts>
+        <layout>Monthly Quota Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Monthly Target Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- cannot edit forecast on monthly quota outside three months from today. --></errorMessage>
+        <name>Cannot_Edit_Forecast_outside_3_months</name>
+    </validationRules>
+</CustomObjectTranslation>

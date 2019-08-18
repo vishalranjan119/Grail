@@ -1,0 +1,101 @@
+<apex:page controller="OA_BR_SoldPlusToBookHAvrgCntrl" id="thePage" sidebar="false"  >
+    <style>
+        .button1 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-size: 14px;
+        margin: 4px 2px;        
+        }
+        .alignRight {
+        text-align:right !important;    
+    }</style>
+        <script type="text/javascript">
+        var j$ = jQuery.noConflict();
+j$(document).ready(function()
+{
+        $("body").html($("body").html().replace('1', 'n/a'));
+    });
+</script>
+    
+    <apex:includeScript value="{! $Resource.jQuery }"/>
+    <apex:includeScript value="{! $Resource.ExporteTableDataJS }"/>
+    <apex:form >
+        <br/>
+        <div>
+            <apex:outputLabel value="Model 2 (By Historical Sales In Out Months)" style="font-size:30px;font-weight:bold;"/>
+        </div>
+        
+        <div align="right">
+            <a id="report" class="button1" target="_blank" href="/{!reportId}">Report</a>           
+        </div>
+        <br/><br/>
+        <apex:actionStatus id="status">
+            <apex:facet name="start">
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
+                    &nbsp;
+                </div>
+                <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                    <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                        <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                        <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+        <apex:actionFunction name="onFilterChange" status="status" action="{!prepareReportData}" reRender="reportDataTable" />        
+        <br/>
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="3">
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedRegion}" label="Region"  title="Region" required="true">
+                    <apex:selectOptions value="{!regions}"></apex:selectOptions>
+                </apex:selectList>
+                
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedYear}" label="Year" title="Year" required="true">
+                    <apex:selectOptions value="{!years}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedMonth}" label="Month" title="Month" required="true">
+                    <apex:selectOptions value="{!months}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+        
+        <apex:pageBlock id="reportDataTable">            
+            <apex:pageMessages ></apex:pageMessages>
+            <div id="dvData">
+                <h2 class="mainTitle">Sales Overview </h2>
+                <br/><br/>
+                <apex:pageBlockTable value="{!dataList}" var="data">                
+                    <apex:column width="9%" headerValue="Year" value="{!data.Year}" style=" {!IF(CONTAINS(data.Year, 'Sold'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;')}"/>
+                    <apex:repeat value="{!monthList}" var="month" >
+                        <apex:column width="7%" headerValue="{!month}"  styleClass="alignRight" headerClass="alignRight" style=" {!IF(CONTAINS(data.Year, 'Sold'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;')}" >
+                       <apex:outputText value="{!data.monthlySoldMap[month]}"/>
+    </apex:column>  
+                         
+                                     
+                    </apex:repeat>     
+                    <apex:column width="7%" headerValue="Total"  style=" {!IF(CONTAINS(data.Year, 'Sold'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;')}"  styleClass="alignRight" headerClass="alignRight"> 
+                      <apex:outputText value="{0, number, ###,##0}"  >
+        <apex:param value="{!data.YearEndSold_budget}"/>
+    </apex:outputText></apex:column> 
+                       
+                </apex:pageBlockTable>
+                <br/><br/>
+                <h2 class="mainTitle">Sales Overview In Percentage</h2>
+                <br/><br/>
+                <apex:pageBlockTable value="{!dataList}" var="data">                
+                    <apex:column headerValue="Year" width="9%" value="{!data.PYear}" style=" {!IF(CONTAINS(data.PYear, 'Budget'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;')}"
+                                 rendered="{!data.PYear != 'Avg. Sales Add (Annual)' && data.PYear != 'Avg. Sales Add (Monthly)' &&  data.PYear != 'Alt Forecast'}"/>
+                    <apex:repeat value="{!monthList}" var="month"  >
+                        <apex:column headerValue="{!month}" width="7%"  style=" {!IF(CONTAINS(data.PYear, 'Budget'), 'font-weight: bold; background-color: aliceblue', 'background-color: white;')}" value="{!data.monthlySoldPrcntgMap[month]}" styleClass="alignRight" headerClass="alignRight"  rendered="{!data.Year != 'Avg. Sales Add (Annual)' && data.Year != 'Avg. Sales Add (Monthly)' &&  data.Year != 'Alt Forecast'}" >
+                        </apex:column>                
+                    </apex:repeat>     
+                                  
+                </apex:pageBlockTable>
+            </div>
+        </apex:pageBlock>
+           <apex:outputLabel value="Note: All monetary amounts reported in USD $000" style="font-weight:bold;"/> 
+    </apex:form>
+</apex:page>

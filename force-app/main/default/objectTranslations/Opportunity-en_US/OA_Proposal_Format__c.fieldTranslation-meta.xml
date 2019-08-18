@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Proposal Format --></label>
+    <name>OA_Proposal_Format__c</name>
+    <picklistValues>
+        <masterLabel>Email</masterLabel>
+        <translation><!-- Email --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PowerPoint</masterLabel>
+        <translation><!-- PowerPoint --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Word Memo</masterLabel>
+        <translation><!-- Word Memo --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

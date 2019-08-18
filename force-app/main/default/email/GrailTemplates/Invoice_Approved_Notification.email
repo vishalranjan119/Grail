@@ -1,0 +1,21 @@
+Dear Finance Team,
+
+Below Invoice has been approved by the CSO. Request you to kindly process  the Invoice and share the same with the CSO:
+
+Billing Details:
+Client:                                     {!Opportunity.Account}
+Project Code:                         {!Opportunity.OA_SFDC_Project_ID__c}
+Project Name:                        {!Opportunity.Name} 
+Milestone Description:           {!OA_Revenue_Forecast__c.OA_Comment__c}
+Delivery Location:                  {!Opportunity.OA_Location__c}
+Billing Period:                        {!OA_Revenue_Forecast__c.OA_Month__c} {!OA_Revenue_Forecast__c.OA_Year__c} 
+Amount:                                       {!OA_Revenue_Forecast__c.OA_Invoice_Amount__c}
+Comments:                           {!ApprovalRequest.Comments}
+
+Opportunity Link:              https://ap8.salesforce.com/{!Opportunity.Id} 
+
+Invoice Milestone Link: https://ap8.salesforce.com/{!OA_Revenue_Forecast__c.Id} 
+
+Thanks,
+
+Grail Insights SFDC Team

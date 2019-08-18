@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Offerings --></label>
+    <name>OA_Offerings__c</name>
+    <picklistValues>
+        <masterLabel>Advertisements</masterLabel>
+        <translation><!-- Advertisements --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Budgeting &amp; Planning</masterLabel>
+        <translation><!-- Budgeting &amp; Planning --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contract Compliance</masterLabel>
+        <translation><!-- Contract Compliance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contract Negotiation</masterLabel>
+        <translation><!-- Contract Negotiation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ideas</masterLabel>
+        <translation><!-- Ideas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Industry Tracking</masterLabel>
+        <translation><!-- Industry Tracking --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Industry and Country Analysis</masterLabel>
+        <translation><!-- Industry and Country Analysis --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Investment Evaluation</masterLabel>
+        <translation><!-- Investment Evaluation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Invoice and Management</masterLabel>
+        <translation><!-- Invoice and Management --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Market Forecasting</masterLabel>
+        <translation><!-- Market Forecasting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Market Sizing and Forecasting</masterLabel>
+        <translation><!-- Market Sizing and Forecasting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marketing Strategy Evaluation</masterLabel>
+        <translation><!-- Marketing Strategy Evaluation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Metrics Reporting</masterLabel>
+        <translation><!-- Metrics Reporting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Newsletters</masterLabel>
+        <translation><!-- Newsletters --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Opportunity Evaluation</masterLabel>
+        <translation><!-- Opportunity Evaluation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Organization Structure Mapping</masterLabel>
+        <translation><!-- Organization Structure Mapping --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Others</masterLabel>
+        <translation><!-- Others --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Partner Scouting</masterLabel>
+        <translation><!-- Partner Scouting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pricing Strategy</masterLabel>
+        <translation><!-- Pricing Strategy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product</masterLabel>
+        <translation><!-- Product --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Regulatory/Legislative Research &amp; Tracking</masterLabel>
+        <translation><!-- Regulatory/Legislative Research &amp; Tracking --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Supply Chain Assessment</masterLabel>
+        <translation><!-- Supply Chain Assessment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Target Identification</masterLabel>
+        <translation><!-- Target Identification --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Technology Scan</masterLabel>
+        <translation><!-- Technology Scan --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Trend Spotting/Future Trend Analysis</masterLabel>
+        <translation><!-- Trend Spotting/Future Trend Analysis --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vendor Analytics</masterLabel>
+        <translation><!-- Vendor Analytics --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

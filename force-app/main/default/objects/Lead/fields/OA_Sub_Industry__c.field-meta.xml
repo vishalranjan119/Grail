@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OA_Sub_Industry__c</fullName>
+    <externalId>false</externalId>
+    <label>Sub-Industry</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Industry</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>OA_Sub_Industry</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Financial Services</controllingFieldValue>
+            <valueName>Asset Management</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Services</controllingFieldValue>
+            <valueName>Credit Cards</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Services</controllingFieldValue>
+            <valueName>Insurance</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Services</controllingFieldValue>
+            <valueName>Investment Banking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Services</controllingFieldValue>
+            <valueName>PE, VC, Hedge Fund</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Services</controllingFieldValue>
+            <valueName>Retail Banking</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Financial Services</controllingFieldValue>
+            <controllingFieldValue>Energy</controllingFieldValue>
+            <controllingFieldValue>Life Science</controllingFieldValue>
+            <valueName>Others</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consumer Products</controllingFieldValue>
+            <valueName>Durables</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consumer Products</controllingFieldValue>
+            <valueName>Electronics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consumer Products</controllingFieldValue>
+            <valueName>Food &amp; Beverages</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consumer Products</controllingFieldValue>
+            <valueName>Health &amp; Beauty Care</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Consumer Products</controllingFieldValue>
+            <valueName>Household Products</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Energy</controllingFieldValue>
+            <valueName>Oil &amp; Gas</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Energy</controllingFieldValue>
+            <valueName>Renewable</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Life Science</controllingFieldValue>
+            <valueName>Biotechnology</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Life Science</controllingFieldValue>
+            <valueName>Diagnostics</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Life Science</controllingFieldValue>
+            <valueName>Drugs/Pharmaceuticals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Life Science</controllingFieldValue>
+            <valueName>Generic/Speciality Pharma</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Life Science</controllingFieldValue>
+            <valueName>Healthcare Dist</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Life Science</controllingFieldValue>
+            <valueName>Healthcare Providers/Institution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Life Science</controllingFieldValue>
+            <valueName>Medical Devices/Supply</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Life Science</controllingFieldValue>
+            <valueName>Nutraceuticals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Life Science</controllingFieldValue>
+            <valueName>Tools</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hi Tech</controllingFieldValue>
+            <valueName>Hardware &amp; Equipment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hi Tech</controllingFieldValue>
+            <valueName>Software &amp; Services</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hi Tech</controllingFieldValue>
+            <valueName>Telecom (Hardware)</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Hi Tech</controllingFieldValue>
+            <valueName>Telecom (Software)</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

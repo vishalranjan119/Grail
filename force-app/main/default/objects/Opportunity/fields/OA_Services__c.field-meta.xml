@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OA_Services__c</fullName>
+    <externalId>false</externalId>
+    <label>Services</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Service 1</fullName>
+                <default>false</default>
+                <label>Service 1</label>
+            </value>
+            <value>
+                <fullName>Service 2</fullName>
+                <default>false</default>
+                <label>Service 2</label>
+            </value>
+            <value>
+                <fullName>Service 3</fullName>
+                <default>false</default>
+                <label>Service 3</label>
+            </value>
+            <value>
+                <fullName>Service 4</fullName>
+                <default>false</default>
+                <label>Service 4</label>
+            </value>
+            <value>
+                <fullName>Service 5</fullName>
+                <default>false</default>
+                <label>Service 5</label>
+            </value>
+            <value>
+                <fullName>Service 6</fullName>
+                <default>false</default>
+                <label>Service 6</label>
+            </value>
+            <value>
+                <fullName>Service 7</fullName>
+                <default>false</default>
+                <label>Service 7</label>
+            </value>
+            <value>
+                <fullName>Service 8</fullName>
+                <default>false</default>
+                <label>Service 8</label>
+            </value>
+            <value>
+                <fullName>Service 9</fullName>
+                <default>false</default>
+                <label>Service 9</label>
+            </value>
+            <value>
+                <fullName>Service 10</fullName>
+                <default>false</default>
+                <label>Service 10</label>
+            </value>
+            <value>
+                <fullName>Service 11</fullName>
+                <default>false</default>
+                <label>Service 11</label>
+            </value>
+            <value>
+                <fullName>Service 12</fullName>
+                <default>false</default>
+                <label>Service 12</label>
+            </value>
+            <value>
+                <fullName>Service 13</fullName>
+                <default>false</default>
+                <label>Service 13</label>
+            </value>
+            <value>
+                <fullName>Service 14</fullName>
+                <default>false</default>
+                <label>Service 14</label>
+            </value>
+            <value>
+                <fullName>Service 15</fullName>
+                <default>false</default>
+                <label>Service 15</label>
+            </value>
+            <value>
+                <fullName>Service 16</fullName>
+                <default>false</default>
+                <label>Service 16</label>
+            </value>
+            <value>
+                <fullName>Service 17</fullName>
+                <default>false</default>
+                <label>Service 17</label>
+            </value>
+            <value>
+                <fullName>Service 18</fullName>
+                <default>false</default>
+                <label>Service 18</label>
+            </value>
+            <value>
+                <fullName>Service 19</fullName>
+                <default>false</default>
+                <label>Service 19</label>
+            </value>
+            <value>
+                <fullName>Service 20</fullName>
+                <default>false</default>
+                <label>Service 20</label>
+            </value>
+            <value>
+                <fullName>Service 21</fullName>
+                <default>false</default>
+                <label>Service 21</label>
+            </value>
+            <value>
+                <fullName>Service 22</fullName>
+                <default>false</default>
+                <label>Service 22</label>
+            </value>
+            <value>
+                <fullName>Service 23</fullName>
+                <default>false</default>
+                <label>Service 23</label>
+            </value>
+            <value>
+                <fullName>Service 24</fullName>
+                <default>false</default>
+                <label>Service 24</label>
+            </value>
+            <value>
+                <fullName>Service 25</fullName>
+                <default>false</default>
+                <label>Service 25</label>
+            </value>
+            <value>
+                <fullName>Service 26</fullName>
+                <default>false</default>
+                <label>Service 26</label>
+            </value>
+            <value>
+                <fullName>Service 27</fullName>
+                <default>false</default>
+                <label>Service 27</label>
+            </value>
+            <value>
+                <fullName>Service 28</fullName>
+                <default>false</default>
+                <label>Service 28</label>
+            </value>
+            <value>
+                <fullName>Service 29</fullName>
+                <default>false</default>
+                <label>Service 29</label>
+            </value>
+            <value>
+                <fullName>Service 30</fullName>
+                <default>false</default>
+                <label>Service 30</label>
+            </value>
+            <value>
+                <fullName>Service 31</fullName>
+                <default>false</default>
+                <label>Service 31</label>
+            </value>
+            <value>
+                <fullName>Service 32</fullName>
+                <default>false</default>
+                <label>Service 32</label>
+            </value>
+            <value>
+                <fullName>Service 33</fullName>
+                <default>false</default>
+                <label>Service 33</label>
+            </value>
+            <value>
+                <fullName>Service 34</fullName>
+                <default>false</default>
+                <label>Service 34</label>
+            </value>
+            <value>
+                <fullName>Service 35</fullName>
+                <default>false</default>
+                <label>Service 35</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>

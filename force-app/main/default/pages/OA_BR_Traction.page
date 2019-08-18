@@ -1,0 +1,110 @@
+<apex:page controller="OA_BR_TractionReportCntrl" sidebar="false">
+    
+    <style>
+        .button1 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-size: 14px;
+        margin: 4px 2px;
+        }
+         .alignRight {
+        text-align:right !important;    
+    }
+    </style>
+    <apex:pageMessages id="msg"></apex:pageMessages>
+    <apex:includeScript value="{! $Resource.jQuery }"/>
+    <apex:includeScript value="{! $Resource.ExporteTableDataJS }"/>
+    <apex:form >
+        <br/><br/>
+        <apex:actionStatus id="status">
+            <apex:facet name="start">
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
+                    &nbsp;
+                </div>
+                <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                    <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                        <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                        <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+        <div>
+            <apex:outputLabel style="font-size:30px;font-weight:bold;">Sales Overview</apex:outputLabel>    
+        </div>
+        <div align="right">
+            <a id="export" class="button1" href="javascript.void(0)">Export</a>           
+        </div>
+        <apex:actionFunction name="onFilterChange" status="status" action="{!search}" reRender="dataTable,msg" />
+        <br/><br/>
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="2">
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedYear}" label="Year" title="Year" required="true">
+                    <apex:selectOptions value="{!years}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedMonth}" label="Month" title="Month" required="true">
+                    <apex:selectOptions value="{!months}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageBlockSection>  
+        </apex:pageBlock>
+        
+        <apex:pageBlock id="dataTable">   
+            <div id="dvData">
+                <apex:pageBlockTable value="{!wrapperList}" var="a" styleClass="slds-table slds-table--bordered slds-table--striped">
+                    <!--  <apex:column headerValue="Region" value="{!a.Region}"></apex:column>
+                    <apex:column headerValue="Budget" value="{!a.Budget}" styleClass="alignRight" headerClass="alignRight"></apex:column>
+                    <apex:column headerValue="Sold" value="{!a.TotalSold}" styleClass="alignRight" headerClass="alignRight"></apex:column>
+                    <apex:column headerValue="Sold(%)" value="{!a.TotalSoldPercent}" styleClass="alignRight" headerClass="alignRight"></apex:column>
+                  <apex:column headerValue="Sold " value="{!a.Sold}" styleClass="alignRight" headerClass="alignRight"></apex:column>
+                    <apex:column headerValue="Sold(%)" value="{!a.SoldPercent}" styleClass="alignRight" headerClass="alignRight"></apex:column> 
+                    <apex:column headerValue="Surplus" value="{!a.Surplus}" styleClass="alignRight" headerClass="alignRight"></apex:column>
+                    <apex:column headerValue="Surplus (%)" value="{!a.SurplusPercent}" styleClass="alignRight" headerClass="alignRight"></apex:column>
+                    <apex:column headerValue="Weighted Pipeline " value="{!a.Weighted_Pipeline}" styleClass="alignRight" headerClass="alignRight"></apex:column>
+                    <apex:column headerValue="Weighted Pipeline (%)" value="{!a.PipelinePerCent}" styleClass="alignRight" headerClass="alignRight"></apex:column>
+                    <apex:column headerValue="Yet To Be Identified" value="{!a.yetToBeIdentfied}" styleClass="alignRight" headerClass="alignRight"></apex:column>
+                    <apex:column headerValue="Yet To Be Identified (%)" value="{!a.yetToBeIdentfiedPerCent}" styleClass="alignRight" headerClass="alignRight"></apex:column> -->                 
+                    <apex:column headerValue="Region" value="{!a.Region}"></apex:column>
+                    <apex:column headerValue="Budget"  styleClass="alignRight" headerClass="alignRight">
+                        <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!a.Budget}"/>
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Sold"  styleClass="alignRight" headerClass="alignRight">
+                             <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!a.TotalSold}"/>
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Sold(%)" value="{!a.TotalSoldPercent}" styleClass="alignRight" headerClass="alignRight"></apex:column>
+                   <!-- <apex:column headerValue="Sold " value="{!a.Sold}" styleClass="alignRight" headerClass="alignRight"></apex:column>
+                    <apex:column headerValue="Sold(%)" value="{!a.SoldPercent}" styleClass="alignRight" headerClass="alignRight"></apex:column> -->
+                    <apex:column headerValue="Weighted Pipeline "  styleClass="alignRight" headerClass="alignRight">
+                        <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!a.Weighted_Pipeline}"/>
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Weighted Pipeline (%)" value="{!a.PipelinePerCent}" styleClass="alignRight" headerClass="alignRight"></apex:column>
+                   <apex:column headerValue="Sold + Weighted Pipeline"  styleClass="alignRight" headerClass="alignRight">
+                              <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!a.SoldplusPipeline}"/>
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Sold + Weighted Pipeline (%)" value="{!a.SoldPipelinePercent}" styleClass="alignRight" headerClass="alignRight"></apex:column>
+                   
+                   
+                    <apex:column headerValue="Variance"  styleClass="alignRight" headerClass="alignRight">
+                    <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!a.yetToBeIdentfied}"/>
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Variance(%)" value="{!a.yetToBeIdentfiedPerCent}" styleClass="alignRight" headerClass="alignRight"></apex:column>                  
+                    
+                </apex:pageBlockTable>
+                
+            </div>
+        </apex:pageBlock>
+           <apex:outputLabel value="Note: All Monetary Amounts are reported in USD $000" style="font-weight:bold;"/> 
+    </apex:form>
+</apex:page>

@@ -1,0 +1,58 @@
+<apex:page controller="OA_BoardReportsController" >
+    
+    <style>
+    table {
+    border-collapse: collapse;
+    width: 100%;
+    }
+    
+    th, td {
+    text-align: left;
+    padding: 8px;
+    font-size:14px;  
+    }
+    
+    tr:nth-child(even) {background-color: #f2f2f2;}
+    </style>
+    
+    <Table><th>Board Reports</th>
+        <tr>
+            <td> Sales Goal And Sold Revenue </td><td><apex:outputLink value="/apex/OA_BR_SalesGoalView">View</apex:outputLink></td></tr>
+        <tr>
+            <td>Weighted Pipeline Trend</td><td><apex:outputLink value="/apex/OA_BR_HistoricWeightedPipeline">View</apex:outputLink><BR/></td></tr>
+        <tr>
+            <td>Unweighted Pipeline Trend</td><td><apex:outputLink value="/apex/OA_BR_HistoricUnWeightedPipeline">View</apex:outputLink><BR/></td></tr>
+        <tr>
+            <td>Model 1 (By % Of Sales)</td><td><apex:outputLink value="/apex/OA_BR_HistoricSold">View</apex:outputLink><BR/></td>
+        </tr>
+        <tr>
+            <td>Model 2 (By Historical Sales In Out Months)</td><td><apex:outputLink value="/apex/OA_BR_SoldPlusToBookHAvrg">View</apex:outputLink><BR/></td>
+        </tr>
+        <tr>
+            <td>Revenue Delivery Trending</td><td><apex:outputLink value="/apex/OA_BR_YTDCummulativeRev">View</apex:outputLink><BR/></td>
+        </tr>
+        
+        <tr>
+            <td>Booked Sales Versus Historic Norms </td><td><apex:outputLink value="/apex/OA_BR_BookedSalesVSHAvrgs">View</apex:outputLink><BR/></td>
+        </tr>
+        <tr>
+            <td>Sales Pipeline Overview </td><td><apex:outputLink value="/apex/OA_BR_ResearchPipelineOverview">View</apex:outputLink><BR/></td>
+        </tr>
+        <tr>
+            <td>Monthly Forecast </td><td><apex:outputLink value="/apex/OA_BR_BudgetvsForecastPage">View</apex:outputLink><BR/></td></tr>
+       <tr>
+            <td>Three Month Forward Outlook </td><td><apex:outputLink value="/apex/OA_BR_BudgetSalesForecast">View</apex:outputLink><BR/></td></tr>
+        
+        <tr>
+            <td>Selected Opportunities</td><td><apex:outputLink value="/apex/OA_BR_WeightedGrossPipeline">View</apex:outputLink><BR/></td></tr>
+        <tr>
+            <td>Deals Won Since Last BOR Call</td><td><apex:outputLink value="/apex/OA_BR_NetSoldAddition">View</apex:outputLink><BR/></td></tr>
+        <tr>
+            <td> Sales Overview</td><td><apex:outputLink value="/apex/OA_BR_Traction">View</apex:outputLink><BR/></td></tr>
+        <tr>
+            <td>Top Accounts by Revenue</td><td><apex:outputLink value="/apex/OA_BR_TopTenAccount">View</apex:outputLink><BR/></td></tr>
+    </Table>  
+    <apex:form id="formId">
+        <apex:commandButton value="Execute Batch" action="{!executeBatch}" rendered="{!showBatchButton}" reRender="formId" styleClass="slds-button slds-button_brand" />
+    </apex:form>
+</apex:page>

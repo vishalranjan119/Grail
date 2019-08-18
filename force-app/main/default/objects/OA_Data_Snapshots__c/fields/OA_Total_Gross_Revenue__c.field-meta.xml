@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OA_Total_Gross_Revenue__c</fullName>
+    <externalId>false</externalId>
+    <label>Total Gross Revenue</label>
+    <summarizedField>OA_Monthly_Data_Snapshot__c.OA_Gross_Revenue__c</summarizedField>
+    <summaryForeignKey>OA_Monthly_Data_Snapshot__c.OA_Data_Snapshots__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

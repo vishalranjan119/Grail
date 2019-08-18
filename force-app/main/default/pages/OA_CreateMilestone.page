@@ -1,0 +1,148 @@
+<apex:page standardController="Opportunity" extensions="OA_CreateMilestoneController" id="thePage"  >
+    <style>
+        .pbSubsection{
+            overflow-y: auto;
+            width: 100%;
+            max-height: 350px;
+        }
+    </style>
+    <script>
+    window.onload = function() {
+        calculateTotal();
+    };
+    var calculateTotal = function(){
+        var elements = document.getElementsByClassName('dummyClass');
+        var milestoneTotal = 0.0;
+        if(elements != null && elements.length > 0){
+            var elementValue ;
+            for(var i= 0; i<elements.length  ; i++){
+                elementValue = elements[i].value;
+                if(elementValue != ''){
+                    try{
+                        milestoneTotal += parseFloat(elementValue);
+                    }catch(err){
+                        alert('Please enter valid decimal value : '+err.message);                            
+                    }
+                }                    
+            }
+            console.log('Milestone Total :'+milestoneTotal);
+            document.getElementById('thePage:theForm:thePB:milestoneTotal').innerText = milestoneTotal;
+        }
+    }
+    </script>
+    <apex:form id="theForm">
+        
+        <apex:actionFunction action="{!init}" name="init" reRender="thePB" />
+        <apex:actionFunction action="{!togleEmptyRows}" name="togleEmptyRowsC" reRender="thePB" />
+        <apex:actionFunction action="{!deleteMilestone}" name="deleteC" reRender="thePB" >
+            <apex:param name="key" value=""/>
+        </apex:actionFunction>
+        <apex:actionFunction action="{!rejectCR}" name="rejectC" reRender="thePB"   />
+        <apex:pageBlock title="Revenue Forecasts" id="thePB" >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockButtons location="top" >               
+                <apex:commandButton rendered="{! !isChangeRequest && !crClosed}" value="Save" action="{!createMilestones}" reRender="thePB"  />
+                <apex:commandButton rendered="{! !isChangeRequest && !crClosed}" value="Save & Close" action="{!createMilestones}" reRender="thePB">
+                    <apex:param name="close" value="yes"/>
+                </apex:commandButton>
+                <apex:commandButton oncomplete="calculateTotal();" rendered="{! isChangeRequest && !crClosed}" action="{!createMilestones}" value="Save & Approve CR" reRender="thePB"/>
+                <apex:commandButton oncomplete="calculateTotal();" onclick="if(confirm('Are your sure ?')){rejectC();}" rendered="{! isChangeRequest && !crClosed}" value="Save & Reject CR"/>
+                <apex:commandButton immediate="true" value="Cancel" action="{!renderToOpp}" reRender="thePB"  />  
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection rendered="{! !isChangeRequest}" title="Opportunity Information" columns="2" >
+                <apex:repeat value="{!$ObjectType.Opportunity.fieldsets.OA_Opp_Fields_on_Milestone_Screen}" var="fieldValue">
+                    <apex:Outputfield rendered="{!fieldValue != 'Amount'}" value="{!Opportunity[fieldValue]}"/>
+                    <apex:Outputfield rendered="{!fieldValue == 'Amount'}" value="{!currentOpp.Amount}"/>
+                    
+                </apex:repeat>                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection rendered="{!isChangeRequest}" title="Parent Opportunity Information" columns="2">
+                <apex:Outputfield value="{!currentOpp['Name']}"/>
+                <apex:Outputfield value="{!currentOpp['StageName']}"/>
+                <apex:Outputfield value="{!currentOpp['Amount']}"/>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Total Project Cost(Inc all CR)" ></apex:outputLabel>
+                    <apex:outputText value="{!currentOpp.CurrencyIsoCode} {!totalProjectCost}"></apex:outputText>
+                
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <br/><br/>
+            <apex:pageBlockSection rendered="{!isChangeRequest}" title="Change Request Information" columns="2">
+                <apex:Outputfield value="{!crOpp['Name']}"/>
+                <apex:Outputfield value="{!crOpp['Change_Request_Type__c']}" />               
+                <apex:Outputfield value="{!crOpp['Amount']}" label="CR Amount" />
+                <apex:Outputfield value="{!crOpp['StageName']}"/>
+                <apex:Outputfield value="{!crOpp['OA_CR_Submission_Date__c']}"/>                
+                <apex:inputField value="{!crOpp['Loss_Reason__c']}"/>
+                
+            </apex:pageBlockSection>
+            <apex:pageBlockSection title="Milestone Details" collapsible="false"  columns="1">
+                <apex:facet name="header">
+                    <apex:outputPanel style="width:50%;margin-left:10px;text-align:left" layout="block" >
+                        <h3>Milestone</h3>
+                        
+                        <apex:selectList disabled="{! isChangeRequest}" style="height:20px;margin-left: 5px;"  label="Select Forecast Type" value="{!milestonType}" size="1" onchange="init();"  >
+                            <apex:selectOption itemLabel="Delivery" itemValue="Delivery" />
+                            <apex:selectOption itemLabel="Invoice" itemValue="Invoice" />                    
+                        </apex:selectList>
+                    </apex:outputPanel>
+                </apex:facet>
+               
+                <apex:pageBlockTable value="{!milestones}" var="key">                        
+                    <apex:column width="60px" >                        
+                        <apex:commandLink action="{!enableEditing}" reRender="thePB" value="Edit" rendered="{!milestones[key].isEditAllowed}">
+                            <apex:param name="key" value="{!milestones[key].mapKey}"/>
+                        </apex:commandLink>
+                        <apex:outputText value=" | " rendered="{!milestones[key].isDeleteAllowed && milestones[key].isEditAllowed}" />
+                        <apex:outputPanel rendered="{!milestones[key].isDeleteAllowed}">
+                            <a href="javascript:void(0)" onclick="if(confirm('Are your sure ?')){deleteC('{!milestones[key].mapKey}');}">Del</a>
+                        </apex:outputPanel>
+                        
+                    </apex:column>
+                    <apex:column headerValue="Month/Year" >
+                        <apex:outputText value="{!milestones[key].displayMonthYear}" />                   
+                    </apex:column>       
+                    <apex:column width="30%" headerValue="Comment">
+                        <apex:inputTextarea value="{!milestones[key].comment}" rows="3" cols="50"  disabled="{!milestones[key].mode == 'v'}" />                    
+                    </apex:column>
+                    <apex:column headerValue="{!IF(milestonType == 'Delivery', 'Sales Revenue','Percentage Invoiced')}">
+                        <apex:inputText style="width: 75px;height: 25px;padding: 5px;" rendered="{!milestonType == 'Delivery'}" value="{!milestones[key].revRecognized}" disabled="{!milestones[key].mode == 'v'}"/>
+                        <apex:outputText rendered="{!milestonType == 'Invoice'}" value="{!milestones[key].percentageInvoioced}" />
+                    </apex:column>
+                    <apex:column headerValue="{!IF(milestonType == 'Delivery', 'Risk Adjusted','Invoice Amount')}">
+                        <apex:outputText rendered="{!milestonType == 'Delivery'}" value="{!milestones[key].riskAdjusted}" />
+                        <apex:inputText style="width: 75px;height: 25px;padding: 5px;" onchange="calculateTotal();" styleClass="dummyClass" disabled="{!milestones[key].mode == 'v'}" rendered="{!milestonType == 'Invoice'}" value="{!milestones[key].invoiceAmount}" />
+                    </apex:column>
+                    <apex:column headerValue="Status">                        
+                        <apex:selectList style="height:30px" size="1" value="{!milestones[key].status}" rendered="{!milestonType == 'Delivery' && milestones[key].status != 'Delivery Completed'}" disabled="{! Opportunity['StageName'] != 'Closed Won' || milestones[key].mode == 'v' || milestones[key].sfId == null}">
+                            <apex:selectOption itemLabel="Planned" itemValue="Planned"/>
+                            <apex:selectOption itemLabel="Delivery In Progress" itemValue="Delivery In Progress"/>
+                        </apex:selectList> 
+                        <apex:outputText rendered="{!milestones[key].status == 'Delivery Completed'}" value="Delivery Completed"/>
+                        <apex:outputText rendered="{!milestonType != 'Delivery'}" value="{!milestones[key].status}" ></apex:outputText>
+                    </apex:column>
+                </apex:pageBlockTable> 
+                
+            </apex:pageBlockSection>
+            <div>
+                <div style="padding:10px;padding-top:0px;float: left;width: 45%;" layout="block">
+                    <apex:commandLink value="Load More Rows | " action="{!loadMoreRows}" rendered="{!displayingEmptyRows}" reRender="thePB" oncomplete="calculateTotal();"  />
+                    <apex:commandLink value="Hide Empty Rows" action="{!togleEmptyRows}" rendered="{!displayingEmptyRows}" reRender="thePB" oncomplete="calculateTotal();"  />
+                    <apex:commandLink value="Display Empty Rows" action="{!togleEmptyRows}" rendered="{!NOT(displayingEmptyRows) && !crClosed}" reRender="thePB" oncomplete="calculateTotal();"  />
+                </div>
+                <div style="float: right;width: 45%;"> 
+                    <div style="float: left;width: 12%;">
+                        <apex:outputLabel rendered="{!isChangeRequest}" value="Total"></apex:outputLabel>
+                    </div>
+                    <div>
+                        <apex:outputText rendered="{!isChangeRequest}" id="milestoneTotal" value="0"></apex:outputText>
+                        
+                    </div>
+                                                  
+                </div>
+                <br style="clear:both;"/>
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

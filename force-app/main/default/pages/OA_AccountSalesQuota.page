@@ -1,0 +1,51 @@
+<apex:page standardController="Sales_Quota__c" extensions="OA_AccountSalesQuotaController" sidebar="false">
+    <apex:slds />
+    <apex:pageMessages />
+    <apex:form >
+        <apex:pageBlock title="Accounts Monthly Quota" rendered="{!!errOnPage}">
+            <apex:pageBlockSection title="Sales Quota Details" collapsible="false" columns="2">
+            	<apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Quota Year" style="font-weight:bold"/> {!yearSelected}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="CSO" style="font-weight:bold"/> {!csoName}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >    
+                    <apex:outputLabel value="Agent Sales Quota" style="font-weight:bold"/> {!agentSalesQuota}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Total Sold Revenue" style="font-weight:bold"/> {!totalSoldRev}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                	<apex:outputLabel value="Total Weighted Pipeline" style="font-weight:bold"/> {!totalWeightedPipeline}
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >	
+                    <apex:outputLabel value="Total Unweighted Pipeline" style="font-weight:bold"/> {!totalunWeightedPipeline}
+            	</apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:outputPanel >
+                <apex:pageBlockSection collapsible="false" columns="1" title="Account Quota Details for {!accName}">
+                    <apex:pageBlockTable value="{!displayMap}" var="acc" id="accTable">
+                        <apex:column headerValue="Month">
+                            <apex:outputField value="{!displayMap[acc].OA_Month__c}" html-disabled="true"/>
+                        </apex:column>    
+                        <apex:column headerValue="Sales Quota">
+                        	<apex:inputField value="{!displayMap[acc].OA_Monthly_Quota__c}"></apex:inputField>
+                        </apex:column> 
+                        <apex:column headerValue="Stretch Quota">
+                        	<apex:inputField value="{!displayMap[acc].OA_Monthly_Stretch_Quota__c}"></apex:inputField>
+                        </apex:column>
+                        <apex:column headerValue="Account Forecast">
+                        	<apex:inputField value="{!displayMap[acc].OA_Forecast__c}" rendered="{!IF(renderMap[acc] == TRUE, TRUE, FALSE)}" ></apex:inputField>
+                            <apex:outputField value="{!displayMap[acc].OA_Forecast__c}" html-disabled="true" rendered="{!IF(renderMap[acc] == FALSE, TRUE, FALSE)}" />
+                        </apex:column>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+            </apex:outputPanel>
+            <apex:pageblockButtons location="bottom">
+        	    <apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageblockButtons>
+        </apex:pageBlock>
+    </apex:form>    
+</apex:page>

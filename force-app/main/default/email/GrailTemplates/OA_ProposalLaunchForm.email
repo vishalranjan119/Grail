@@ -1,0 +1,73 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[Dear Allocation Team,<br><br>Please find below the details of Proposal Launch form.<br><br><b>Billing Details:<br></b><blockquote><i><u>Client Type:</u></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {!Opportunity.OA_Client_Type__c}<i><u><br>Proposal Name</u></i>: <span style="white-space:pre">	</span>{!Opportunity.Name}<br><u><i>Project Type</i></u>: <span style="white-space:pre">		</span>{!Opportunity.OA_Project_Type__c}<br><u><i>Company Name</i></u>: <span style="white-space:pre">	</span>{!Opportunity.Account}<br><u><i>Proposed Project Start Date</i></u>: <span style="white-space:pre">	</span>{!Opportunity.OA_Proposed_Start_Date__c}<br><u><i>Proposed Project End Date :</i></u><i>&nbsp;&nbsp;&nbsp; </i><i></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {!Opportunity.OA_Proposed_End_Date__c}</blockquote><blockquote><u>CSO Due Date</u>: {!Opportunity.OA_Proposal_Submission_Date_CSO__c}<br><u><i>Closed Date</i></u>: <span style="white-space:pre">		</span>{!Opportunity.CloseDate}<br><i><u>SFDC Proposal ID</u></i>: {!Opportunity.OA_SFDC_Proposal_ID__c}<br><i style="text-decoration-line: underline;">Proposed Fee</i>:&nbsp;{!Opportunity.OA_Proposed_Fee__c}</blockquote><blockquote><br></blockquote><blockquote><br><br></blockquote><b>Engagement Details:</b><br><blockquote><i><u>Opportunity Source</u></i>:&nbsp;<span style="white-space:pre">	</span>{!Opportunity.LeadSource}<br><u><i>Opportunity Originator Name</i></u>: <br><u><i>Primary Client Contact</i></u>: <br><u><i>CSO</i></u>: <span style="white-space:pre">				</span>{!Opportunity.OwnerFullName}<br><u><i>CSO Email</i></u>:<span style="white-space:pre">			</span>{!Opportunity.OwnerEmail}<br></blockquote><b>Proposal Details:</b><br><blockquote><u><i>Proposal Type</i></u>: <span style="white-space:pre">		</span>{!Opportunity.OA_Proposal_Type__c}<br><u><i>Approved by BU Head:</i></u>&nbsp;&nbsp;&nbsp; <span style="white-space:pre">		</span>{!Opportunity.Approved_by_BU_Head__c}<br><i><u>Proposal Submission Date:</u>&nbsp; </i><span style="white-space:pre">		</span>{!Opportunity.OA_Proposal_Submission_Date__c}<u><i><br>Proposal Format</i></u>: <span style="white-space:pre">		</span>{!Opportunity.OA_Proposal_Format__c}<br><u><i>Business Type</i></u>: <span style="white-space:pre">		</span>{!Opportunity.Type}<br><i><u>Success Criteria:</u></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {!Opportunity.OA_Success_Criteria__c}<br><u><i>Client Context/ Proposal Objective</i></u>: {!Opportunity.Description}</blockquote>&nbsp;<div>Thanks,<br>{!Opportunity.OwnerFirstName}<br>
+ <table width="557" border="0" cellspacing="0" cellpadding="0"><colgroup><col style="mso-width-source:userset;mso-width-alt:4827;width:99pt" width="132">
+ <col style="mso-width-source:userset;mso-width-alt:8265;width:170pt" width="226">
+ <col style="mso-width-source:userset;mso-width-alt:7277;width:149pt" width="199">
+ </colgroup><tbody><tr style="height:15.0pt" height="20">
+  
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.75pt" height="21">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.75pt" height="21">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.75pt" height="21">
+  
+  
+ </tr>
+</tbody></table></div>]]></td>
+</tr>
+</table>

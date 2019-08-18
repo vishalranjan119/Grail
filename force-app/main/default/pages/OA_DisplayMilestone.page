@@ -1,0 +1,50 @@
+<apex:page standardController="Opportunity" extensions="OA_DisplayMilestoneController" >
+    <apex:pageMessages />
+    <apex:pageBlock mode="maindetail">
+        <apex:pageBlockSection columns="1" title="Revenue Forecast">
+            <apex:pageMessage rendered="{! NOT(haveDeliveryMilestone)}" severity="INFO" detail="*No record to display." />
+            
+           
+            <apex:pageBlockTable rendered="{!haveDeliveryMilestone}" value="{!deliveryMilestones}" var="dm">
+                
+                <apex:column style="word-break: break-word;" width="10%"   headerValue="Duration" >
+                    <a href="/{!dm.sfId}" target="_blank">{!dm.displayMonthYear}</a>
+                </apex:column>                
+                <apex:column style="word-break: break-word;" width="10%"   headerValue="Parent Project" value="{!dm.salesRevenue} {!dm.currencyType}"  />
+                <apex:column style="word-break: break-word;" width="40%"  headerValue="Change Request (Closed)" >
+                    <apex:repeat value="{!dm.changeRequests}"  var="changeRequest">
+                        <apex:outputPanel rendered="{!changeRequest.isClosed}">
+                        	<a href="/{!changeRequest.crMilestoneId}" target="_blank">{!changeRequest.changeAmount}</a>&nbsp;
+                        </apex:outputPanel>
+                    </apex:repeat>
+                </apex:column>
+                <!--apex:column style="word-break: break-word;" width="20%"  headerValue="Change Request(Open)" >
+                    <apex:repeat value="{!dm.changeRequests}" var="changeRequest">
+                        <apex:outputPanel rendered="{! !changeRequest.isClosed}">
+                        <a href="/{!changeRequest.crOppId}" target="_blank">{!changeRequest.changeAmount}</a>&nbsp;
+                        </apex:outputPanel>
+                    </apex:repeat>
+                </apex:column-->
+                
+                <apex:column style="word-break: break-word;" width="10%"  headerValue="Total (Inc. Closed CR's)" value="{!dm.totalSalesRevenue} {!dm.currencyType}"   />
+                <!--apex:column style="word-break: break-word;" width="15%"  headerValue="Risk Adjusted" value="{!dm.riskAdjusted} {!dm.currencyType}"  /-->
+                <apex:column style="word-break: break-word;" width="10%"   headerValue="Status" value="{!dm.status}"  />
+                <apex:column style="word-break: break-word;" width="20%"  headerValue="Comment" value="{!dm.comment} "  />
+            </apex:pageBlockTable>
+        </apex:pageBlockSection>
+        <br/>
+        <br/>
+        <apex:pageBlockSection columns="1" title="Invoice">
+            <apex:pageMessage rendered="{! NOT(haveInvoiceMilestone)}" severity="INFO" detail="*No record to display." />
+            <apex:pageBlockTable rendered="{!haveInvoiceMilestone}" value="{!invoiceMilestones}" var="im">
+                <apex:column style="word-break: break-word;" width="15%" headerValue="Duration" >
+                    <a href="/{!im.sfId}" target="_blank">{!im.displayMonthYear}</a>                    
+                </apex:column>
+                <apex:column style="word-break: break-word;" width="35%" headerValue="Comment" value="{!im.comment} "  />
+                <apex:column style="word-break: break-word;" width="12.5%" headerValue="Invoiced %" value="{!im.percentageInvoioced} %"  />
+                <apex:column style="word-break: break-word;" width="12.5%" headerValue="Invoice Amount" value="{!im.invoiceAmount} {!im.currencyType}"  />
+                <apex:column style="word-break: break-word;" width="25%" headerValue="Status" value="{!im.status}"  />
+            </apex:pageBlockTable>            
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OA_Offerings__c</fullName>
+    <externalId>false</externalId>
+    <label>Offerings</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Industry and Country Analysis</fullName>
+                <default>false</default>
+                <label>Industry and Country Analysis</label>
+            </value>
+            <value>
+                <fullName>Market Sizing and Forecasting</fullName>
+                <default>false</default>
+                <label>Market Sizing and Forecasting</label>
+            </value>
+            <value>
+                <fullName>Opportunity Evaluation</fullName>
+                <default>false</default>
+                <label>Opportunity Evaluation</label>
+            </value>
+            <value>
+                <fullName>Partner Scouting</fullName>
+                <default>false</default>
+                <label>Partner Scouting</label>
+            </value>
+            <value>
+                <fullName>Investment Evaluation</fullName>
+                <default>false</default>
+                <label>Investment Evaluation</label>
+            </value>
+            <value>
+                <fullName>Target Identification</fullName>
+                <default>false</default>
+                <label>Target Identification</label>
+            </value>
+            <value>
+                <fullName>Trend Spotting/Future Trend Analysis</fullName>
+                <default>false</default>
+                <label>Trend Spotting/Future Trend Analysis</label>
+            </value>
+            <value>
+                <fullName>Market Forecasting</fullName>
+                <default>false</default>
+                <label>Market Forecasting</label>
+            </value>
+            <value>
+                <fullName>Supply Chain Assessment</fullName>
+                <default>false</default>
+                <label>Supply Chain Assessment</label>
+            </value>
+            <value>
+                <fullName>Pricing Strategy</fullName>
+                <default>false</default>
+                <label>Pricing Strategy</label>
+            </value>
+            <value>
+                <fullName>Industry Tracking</fullName>
+                <default>false</default>
+                <label>Industry Tracking</label>
+            </value>
+            <value>
+                <fullName>Newsletters</fullName>
+                <default>false</default>
+                <label>Newsletters</label>
+            </value>
+            <value>
+                <fullName>Regulatory/Legislative Research &amp; Tracking</fullName>
+                <default>false</default>
+                <label>Regulatory/Legislative Research &amp; Tracking</label>
+            </value>
+            <value>
+                <fullName>Organization Structure Mapping</fullName>
+                <default>false</default>
+                <label>Organization Structure Mapping</label>
+            </value>
+            <value>
+                <fullName>Marketing Strategy Evaluation</fullName>
+                <default>false</default>
+                <label>Marketing Strategy Evaluation</label>
+            </value>
+            <value>
+                <fullName>Technology Scan</fullName>
+                <default>false</default>
+                <label>Technology Scan</label>
+            </value>
+            <value>
+                <fullName>Product</fullName>
+                <default>false</default>
+                <label>Product</label>
+            </value>
+            <value>
+                <fullName>Advertisements</fullName>
+                <default>false</default>
+                <label>Advertisements</label>
+            </value>
+            <value>
+                <fullName>Ideas</fullName>
+                <default>false</default>
+                <label>Ideas</label>
+            </value>
+            <value>
+                <fullName>Vendor Analytics</fullName>
+                <default>false</default>
+                <label>Vendor Analytics</label>
+            </value>
+            <value>
+                <fullName>Contract Negotiation</fullName>
+                <default>false</default>
+                <label>Contract Negotiation</label>
+            </value>
+            <value>
+                <fullName>Contract Compliance</fullName>
+                <default>false</default>
+                <label>Contract Compliance</label>
+            </value>
+            <value>
+                <fullName>Budgeting &amp; Planning</fullName>
+                <default>false</default>
+                <label>Budgeting &amp; Planning</label>
+            </value>
+            <value>
+                <fullName>Metrics Reporting</fullName>
+                <default>false</default>
+                <label>Metrics Reporting</label>
+            </value>
+            <value>
+                <fullName>Invoice and Management</fullName>
+                <default>false</default>
+                <label>Invoice and Management</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

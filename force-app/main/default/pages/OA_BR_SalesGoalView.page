@@ -1,0 +1,107 @@
+<apex:page controller="OA_BR_SalesGoalViewCntrl">
+    <style>
+        .button1 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-size: 14px;
+        margin: 4px 2px;
+        }
+        
+        .alignRight {
+        text-align:right !important;    
+        }
+    </style>
+    
+    
+    
+    <apex:includeScript value="{! $Resource.jQuery }"/>
+    <apex:includeScript value="{! $Resource.ExporteTableDataJS }"/>
+    <apex:form >
+        <br/><br/>
+        <apex:actionStatus id="status">
+            <apex:facet name="start">
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
+                    &nbsp;
+                </div>
+                <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                    <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                        <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                        <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+        <div>
+            <apex:outputLabel value="Sales Goal And Sold Revenue" style="font-size:30px;font-weight:bold;"/>    
+        </div>
+        <div align="right">
+            <a id="export" class="button1" href="javascript.void(0)">Export</a>           
+        </div>
+        <br/>
+        <!--
+<apex:outputPanel id="chart">
+<apex:chart data="{!Datalist}" width="800" height="400" animate="true">
+<apex:legend position="left"></apex:legend>
+<apex:axis type="Category" position="bottom" fields="Region" title="Region"/>
+<apex:axis type="Numeric" position="left" fields="Sold,Budget,Weighted_Pipeline,Surplus,Yet_To_Be_Identified" title="Amount (In K USD)" />
+<apex:barSeries orientation="vertical"  axis="bottom" xField="Region"  yField="Sold,Budget,Weighted_Pipeline,Surplus,Yet_To_Be_Identified" stacked="false"/>           
+apex:scatterSeries axis="left" xField="Region" yField="Budget" markerType="circle"  markerFill="Black">
+</apex:scatterSeries
+</apex:chart>
+</apex:outputPanel> -->
+        <apex:actionFunction name="onFilterChange" status="status" action="{!search}" reRender="dataTable,msg" />
+        <br/><br/>
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="2">                
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedYear}" title="Year" label="Year" required="true">
+                    <apex:selectOptions value="{!years}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedMonth}" title="Month" label="Month" required="true" >
+                    <apex:selectOptions value="{!months}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageBlockSection>  
+        </apex:pageBlock>
+        
+        <apex:pageBlock id="dataTable"> 
+            <apex:pageMessages id="msg"></apex:pageMessages>
+            <div id="dvData">
+                
+                <apex:pageBlockTable value="{!wrapperList}" var="a" styleClass="slds-table slds-table--bordered slds-table--striped">
+                    <apex:column headerValue="Region" value="{!a.Region}"  ></apex:column>
+                    <apex:column styleClass="alignRight" headerClass="alignRight" headerValue="Budget" >
+                        <apex:outputText value="{0, number, ###,##0}"   >
+                            <apex:param value="{!a.Budget}"/>
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column styleClass="alignRight" headerClass="alignRight" headerValue=" Sold" >
+                      <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!a.totalSold}"/>
+                        </apex:outputText>
+                    </apex:column>
+                    <!-- <apex:column styleClass="alignRight" headerClass="alignRight" headerValue="Sold" value="{!a.Sold}"></apex:column> -->
+                    <apex:column styleClass="alignRight" headerClass="alignRight" headerValue="Surplus" >
+                        <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!a.Surplus}"/>
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column styleClass="alignRight" headerClass="alignRight" headerValue="Weighted Pipeline" >
+                        <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!a.Weighted_Pipeline}"/>
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column styleClass="alignRight"  headerClass="alignRight" headerValue="Yet To Be Identified" >
+                                    <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!a.Gap}"/>
+                        </apex:outputText>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </div>
+            
+        </apex:pageBlock>
+        
+        <apex:outputLabel value="Note: All monetary amounts reported in USD $000" style="font-weight:bold;"/> 
+    </apex:form>   
+</apex:page>

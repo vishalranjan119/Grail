@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Contact_Webservice_Endpoint</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Webservice Endpoint</shortDescription>
+        <value>http://grailresearch.centralindia.cloudapp.azure.com:9048/IntegreonUserNamePassword/OData/Company(&#39;Integreon%20India%20Pvt%20Ltd&#39;)/SFDCContactService?$format=json</value>
+    </labels>
+    <labels>
+        <fullName>Delivery_Milestone_Opp_Closed_Won_and_Sum_not_equals_to_Opportunity_Amount</fullName>
+        <categories>Delivery Milestone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delivery Milestone - Opp Closed Won and Sum not equals to Opportunity Amount</shortDescription>
+        <value>Opportunity is closed won. Please ensure the Sum of all Delivery Milestone must be equal to the Price to Client.</value>
+    </labels>
+    <labels>
+        <fullName>Delivery_Milestone_Sum_greater_than_Opportunity_Amount</fullName>
+        <categories>Delivery Milestone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Delivery Milestone - Sum greater than Opportunity Amount</shortDescription>
+        <value>Sum of Revenue Recognized must not be greater than Price to Client.</value>
+    </labels>
+    <labels>
+        <fullName>Generic_Error_Message</fullName>
+        <categories>Validation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Generic Error Message</shortDescription>
+        <value>Something went wrong. Please contact your administrator.</value>
+    </labels>
+    <labels>
+        <fullName>Invoice_Amount_Opp_Closed_Won_and_Invoice_Milestone_not_equals_to_100</fullName>
+        <categories>Invoice Milestone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice Amount - Opp Closed Won and Invoice Milestone not equals to 100%</shortDescription>
+        <value>Opportunity is closed won. Please ensure the sum of all Invoice Milestone must be equal to 100%.</value>
+    </labels>
+    <labels>
+        <fullName>Invoice_Milestone_Sum_greater_than_100</fullName>
+        <categories>Invoice Milestone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Invoice Milestone - Sum greater than 100%</shortDescription>
+        <value>Sum of Percentage Invoice must not be greater than 100%.</value>
+    </labels>
+    <labels>
+        <fullName>Milestone_Cutoff_Date</fullName>
+        <categories>Milestone</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Milestone Cutoff Date</shortDescription>
+        <value>200</value>
+    </labels>
+    <labels>
+        <fullName>OA_ReportAverageYears</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OA_ReportAverageYears</shortDescription>
+        <value>5</value>
+    </labels>
+    <labels>
+        <fullName>OA_SalesQuotaCalculationYear</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>OA_SalesQuotaCalculationYear</shortDescription>
+        <value>2019</value>
+    </labels>
+    <labels>
+        <fullName>Past_due_date_error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Past due date Error</shortDescription>
+        <value>You cannot modify an Invoice where Due date is in Past.</value>
+    </labels>
+    <labels>
+        <fullName>Valid_Revenue_Recognized_and_Invoiced_Percentage</fullName>
+        <categories>Validation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Valid Revenue Recognized and Invoiced Percentage</shortDescription>
+        <value>Please enter valid Revenue Recognized. Only numeric and positive value acceptable.</value>
+    </labels>
+</CustomLabels>

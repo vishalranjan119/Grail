@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notify_Finance_Team_Invoice_Approved</fullName>
+        <ccEmails>arinvoicedesk@integreon.com</ccEmails>
+        <ccEmails>ARGrail@grailinsights.com</ccEmails>
+        <description>Notify Finance Team - &quot;Invoice Approved&quot;</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>nitin.singh@grailinsights.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>GrailTemplates/Invoice_HTML_Approved_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_User_Invoice_Rejected_Update_the_Invoice_Milestones</fullName>
+        <description>Notify User-Invoice Rejected ,Update the Invoice Milestones</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>nitin.singh@grailinsights.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>GrailTemplates/Invoice_Rejected_Notification</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Final_Price</fullName>
+        <field>OA_Total_Project_Cost__c</field>
+        <formula>OA_Opportunity__r.Amount</formula>
+        <name>Update Final Price</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <targetObject>OA_Opportunity__c</targetObject>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Invoice_Approval_Pending</fullName>
+        <field>OA_Status__c</field>
+        <literalValue>Invoice Approval Pending</literalValue>
+        <name>Update Status &quot;Invoice Approval Pending&quot;</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Invoice_Approved</fullName>
+        <field>OA_Status__c</field>
+        <literalValue>Invoice Approved</literalValue>
+        <name>Update Status &quot;Invoice Approved&quot;</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_Invoice_Rejected</fullName>
+        <field>OA_Status__c</field>
+        <literalValue>Invoice Rejected</literalValue>
+        <name>Update Status &quot;Invoice Rejected&quot;</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Status_to_Delivery_Completed</fullName>
+        <field>OA_Status__c</field>
+        <literalValue>Delivery Completed</literalValue>
+        <name>Update Status to Delivery Completed</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>update_status</fullName>
+        <field>OA_Status__c</field>
+        <literalValue>Planned</literalValue>
+        <name>update status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>update status if date is modified</fullName>
+        <actions>
+            <name>update_status</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>If Invoice Date modified and Invoice Status is “Invoice Rejected” 
+Update Status = “Pending”</description>
+        <formula>IF((ISCHANGED( OA_Month__c ) || ISCHANGED( OA_Year__c )) &amp;&amp;  ISPICKVAL(OA_Status__c, &#39;Invoice Rejected&#39;), TRUE, FALSE)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

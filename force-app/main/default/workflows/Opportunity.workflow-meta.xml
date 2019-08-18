@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notify_Allocation_Team</fullName>
+        <description>Notify Allocation Team</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Allocation_Team</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>nitin.singh@grailinsights.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>GrailTemplates/Allocation_Team_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_Finance_Team_Invoice_Modified</fullName>
+        <description>Notify Finance Team - &quot;Invoice Modified&quot;</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Finance_Team</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>nitin.singh@grailinsights.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>GrailTemplates/Change_Invoice_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>Opportunity_Closed_Won_Intimation_to_Regional_Head_of_CSO</fullName>
+        <description>Opportunity Closed Won Intimation to Regional Head of CSO</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Allocation_Team</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>Finance_Team</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>CEO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>nitin.singh@grailinsights.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>GrailTemplates/Opp_Closed_Won</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_email_Notification</fullName>
+        <ccEmails>Sales_Support@grailinsights.com;</ccEmails>
+        <ccEmails>Alok.Gupta@grailinsights.com;</ccEmails>
+        <ccEmails>mujahid.ulhaq@grailinsights.com;</ccEmails>
+        <ccEmails>Jill.Colley@GRAILINSIGHTS.COM</ccEmails>
+        <description>Send email Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>CEO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>brad.williamson@grailinsights.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>melissa.bane@grailinsights.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>ryan.doornbos@grailinsights.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vivek.neb@grailinsights.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>GrailTemplates/Opp_Closed_Won</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Update_Amount</fullName>
+        <field>Amount</field>
+        <formula>OA_Revenue_Total__c</formula>
+        <name>Update Amount</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_Email</fullName>
+        <field>Owner_s_Manager_Email__c</field>
+        <formula>Owner.Manager.Email</formula>
+        <name>Update Email</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Update_FinalPrice</fullName>
+        <field>OA_Total_Project_Cost__c</field>
+        <formula>Amount</formula>
+        <name>Update Final Price</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+    </fieldUpdates>
+    <rules>
+        <fullName>Change Request Approved%2FClosed Won</fullName>
+        <actions>
+            <name>Notify_Finance_Team_Invoice_Modified</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Change Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Proposal Activities</fullName>
+        <actions>
+            <name>Assist_with_Proposal</name>
+            <type>Task</type>
+        </actions>
+        <actions>
+            <name>Proposal_Document_Validation</name>
+            <type>Task</type>
+        </actions>
+        <actions>
+            <name>Send_Request_to_Allocations_team</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Proposal</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Send Email notification on oppty closed Won</fullName>
+        <actions>
+            <name>Send_email_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.RecordTypeId</field>
+            <operation>notEqual</operation>
+            <value>Change Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Amount</fullName>
+        <actions>
+            <name>Update_Amount</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.OA_Revenue_Total__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Final Price to Client On Opportunity</fullName>
+        <actions>
+            <name>Update_FinalPrice</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <description>Update Final Price to Client On Opportunity</description>
+        <formula>OR(
+ISNEW(),
+AND(
+NOT(ISPICKVAL(StageName, &#39;Closed Won&#39;)),
+NOT(ISPICKVAL(StageName, &#39;Closed Lost&#39;)),
+ISCHANGED(Amount)  
+)
+)</formula>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Opp Owner%27s Email</fullName>
+        <actions>
+            <name>Update_Email</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.OwnerId</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Assist_with_Proposal</fullName>
+        <assignedToType>accountOwner</assignedToType>
+        <description>Opportunity has reached proposal stage. Please collaborate with the Opportunity owner for proposal creation.</description>
+        <dueDateOffset>1</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Assist with Proposal</subject>
+    </tasks>
+    <tasks>
+        <fullName>Proposal_Document_Validation</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Ensure that proposal document contains below:
+- Analytical plan
+- Proposed solution
+- Illustrative slides
+- Pricing
+- Workplan
+- Case studies</description>
+        <dueDateOffset>5</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Proposal Document Validation</subject>
+    </tasks>
+    <tasks>
+        <fullName>Send_Request_to_Allocations_team</fullName>
+        <assignedToType>owner</assignedToType>
+        <description>Please reach out to the Allocation team</description>
+        <dueDateOffset>2</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Open</status>
+        <subject>Send Request to Allocations team</subject>
+    </tasks>
+</Workflow>

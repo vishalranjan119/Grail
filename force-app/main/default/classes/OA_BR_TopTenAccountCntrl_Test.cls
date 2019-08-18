@@ -1,0 +1,84 @@
+@isTest
+public class OA_BR_TopTenAccountCntrl_Test {
+    public static testMethod void testReportData(){
+        Account a = OA_TestDataUtility.createAccount();
+        insert a;
+        Sales_Quota__c sq = OA_TestDataUtility.createRegionalSalesQuota();
+        insert sq;
+        List<OA_Data_Snapshots__c> dataSnapList = new List<OA_Data_Snapshots__c>();
+        OA_Data_Snapshots__c d = OA_TestDataUtility.createDataSnapShots();
+        d.OA_Probability__c = 50;
+        d.OA_Region__c = 'East NA';
+        d.Account_Name__c ='Test A';
+        d.January__c = 10000;
+        d.February__c = 10000;
+        d.March__c = 10000;
+        d.April__c = 10000;
+        d.May__c = 10000;
+        d.June__c = 10000;
+        d.July__c = 10000;
+        d.August__c = 10000;
+        d.September__c = 10000;
+        d.October__c = 10000;
+        d.November__c = 10000;
+        d.December__c = 10000;
+        d.OA_Year__c= '2018';
+        OA_Data_Snapshots__c d1 = OA_TestDataUtility.createDataSnapShots();
+        d1.OA_Probability__c = 80;
+        d1.OA_Region__c = 'APAC & MEA';
+        d1.Account_Name__c ='Test B';
+        d1.January__c = 10000;
+        d1.February__c = 10000;
+        d1.March__c = 10000;
+        d1.April__c = 10000;
+        d1.May__c = 10000;
+        d1.June__c = 10000;
+        d1.July__c = 10000;
+        d1.August__c = 10000;
+        d1.September__c = 10000;
+        d1.October__c = 10000;
+        d1.November__c = 10000;
+        d1.December__c = 10000;
+        d1.OA_Year__c= '2018';
+        OA_Data_Snapshots__c d2 = OA_TestDataUtility.createDataSnapShots();
+        d2.OA_Probability__c = 100;
+        d2.OA_Region__c = 'East NA';
+        d2.Account_Name__c ='Test C';
+       
+        d2.January__c = 10000;
+        d2.February__c = 10000;
+        d2.March__c = 10000;
+        d2.April__c = 10000;
+        d2.May__c = 10000;
+        d2.June__c = 10000;
+        d2.July__c = 10000;
+        d2.August__c = 10000;
+        d2.September__c = 10000;
+        d2.October__c = 10000;
+        d2.November__c = 10000;
+        d2.December__c = 10000;
+        d2.OA_Year__c= '2018';
+        OA_Data_Snapshots__c d3 = OA_TestDataUtility.createDataSnapShots();
+        d3.OA_Probability__c = 100;
+        d3.OA_Region__c = 'Europe';
+        d3.Account_Name__c ='Test D';
+        dataSnapList.add(d);
+        dataSnapList.add(d1);
+        dataSnapList.add(d2);
+        dataSnapList.add(d3);
+        insert dataSnapList;
+        Test.startTest();
+        OA_BR_TopTenAccountCntrl cont = new OA_BR_TopTenAccountCntrl();
+        cont.selectedMonth = String.valueOf(Date.today().month());
+        cont.selectedRegion = 'East NA';
+        cont.selectedYear = String.valueOf(date.today().year()-1);
+        cont.prepareReportData();
+        
+        OA_BR_TopTenAccountCntrl contt = new OA_BR_TopTenAccountCntrl();
+        contT.selectedMonth = String.valueOf(Date.today().month());
+        contt.selectedRegion = 'Global';
+        contt.selectedYear = String.valueOf(date.today().year());
+        contt.prepareReportData();
+        Test.stopTest();
+    }
+}

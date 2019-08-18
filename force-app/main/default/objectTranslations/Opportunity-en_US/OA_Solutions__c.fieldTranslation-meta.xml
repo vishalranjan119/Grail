@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Solutions --></label>
+    <name>OA_Solutions__c</name>
+    <picklistValues>
+        <masterLabel>Battle Cards and Sector Storyboards</masterLabel>
+        <translation><!-- Battle Cards and Sector Storyboards --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Brand Tracking</masterLabel>
+        <translation><!-- Brand Tracking --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Business Operations</masterLabel>
+        <translation><!-- Business Operations --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Channel and Messaging Analysis</masterLabel>
+        <translation><!-- Channel and Messaging Analysis --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Churn Analysis</masterLabel>
+        <translation><!-- Churn Analysis --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Competitive Benchmarking</masterLabel>
+        <translation><!-- Competitive Benchmarking --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Competitive Monitoring</masterLabel>
+        <translation><!-- Competitive Monitoring --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Concept Testing</masterLabel>
+        <translation><!-- Concept Testing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Financial Planning &amp; Analysis</masterLabel>
+        <translation><!-- Financial Planning &amp; Analysis --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Futurecasting</masterLabel>
+        <translation><!-- Futurecasting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Knowledge Audit and Synthesis</masterLabel>
+        <translation><!-- Knowledge Audit and Synthesis --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Knowledge System Development</masterLabel>
+        <translation><!-- Knowledge System Development --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>M&amp;A Support</masterLabel>
+        <translation><!-- M&amp;A Support --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Market Entry Assessment</masterLabel>
+        <translation><!-- Market Entry Assessment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Market Monitoring</masterLabel>
+        <translation><!-- Market Monitoring --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Marketing Investment Allocation</masterLabel>
+        <translation><!-- Marketing Investment Allocation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Others</masterLabel>
+        <translation><!-- Others --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Partner Program Strategy</masterLabel>
+        <translation><!-- Partner Program Strategy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Product Propensity Analysis</masterLabel>
+        <translation><!-- Product Propensity Analysis --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Purchase Process</masterLabel>
+        <translation><!-- Purchase Process --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Research Roadmap</masterLabel>
+        <translation><!-- Research Roadmap --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Channel Assessment</masterLabel>
+        <translation><!-- Sales Channel Assessment --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Segmentation and Buyer Personas</masterLabel>
+        <translation><!-- Segmentation and Buyer Personas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Territory Growth Projections</masterLabel>
+        <translation><!-- Territory Growth Projections --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

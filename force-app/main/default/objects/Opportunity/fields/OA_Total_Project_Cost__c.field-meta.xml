@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OA_Total_Project_Cost__c</fullName>
+    <defaultValue>0.00</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>Total Cost of Won Project along with all Won Change Requests</inlineHelpText>
+    <label>Final Price to Client</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Grail_Letter_Head</letterhead>
+    <name>Invoice HTML Approved Notification</name>
+    <style>freeForm</style>
+    <subject>Invoice Approved for {!Opportunity.Name}</subject>
+    <textOnly>Dear Finance Team,
+
+Below Invoice has been approved by the CSO. Request you to kindly process the Invoice and share the same with the CSO.
+
+Please find below the details:
+
+Client:                               {!Opportunity.Account}
+Project Code:                   {!Opportunity.OA_SFDC_Project_ID__c}
+Project Name:                  {!Opportunity.Name}
+Milestone Description:     {!OA_Revenue_Forecast__c.OA_Comment__c}
+Delivery Location:            {!Opportunity.OA_Location__c}
+Billing Period:                   {!OA_Revenue_Forecast__c.OA_Month__c},{!OA_Revenue_Forecast__c.OA_Year__c}
+Amount:                           {!OA_Revenue_Forecast__c.OA_Invoice_Amount__c}
+Comments:                      {!ApprovalRequest.Comments}
+
+Opportunity Link: https://ap8.salesforce.com/{!Opportunity.Id}
+
+Invoice Milestone Link: https://ap8.salesforce.com/{!OA_Revenue_Forecast__c.Id}
+
+
+Thanks,
+Grail Insights SFDC Team</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

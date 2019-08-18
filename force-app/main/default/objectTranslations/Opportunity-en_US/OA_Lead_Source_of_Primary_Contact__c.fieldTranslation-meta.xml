@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Lead Source of Primary Contact --></label>
+    <name>OA_Lead_Source_of_Primary_Contact__c</name>
+    <picklistValues>
+        <masterLabel>Advertisements</masterLabel>
+        <translation><!-- Advertisements --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cold Call</masterLabel>
+        <translation><!-- Cold Call --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Conference/ Trade Show</masterLabel>
+        <translation><!-- Conference/ Trade Show --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Deloitte Employee</masterLabel>
+        <translation><!-- Deloitte Employee --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Grail Website</masterLabel>
+        <translation><!-- Grail Website --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inbound Call</masterLabel>
+        <translation><!-- Inbound Call --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Other</masterLabel>
+        <translation><!-- Other --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PR/ Read About Us in Media or Online</masterLabel>
+        <translation><!-- PR/ Read About Us in Media or Online --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Personal Contact</masterLabel>
+        <translation><!-- Personal Contact --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prior Business Relationship</masterLabel>
+        <translation><!-- Prior Business Relationship --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Referral</masterLabel>
+        <translation><!-- Referral --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Webinar</masterLabel>
+        <translation><!-- Webinar --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

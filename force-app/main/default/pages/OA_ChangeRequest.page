@@ -1,0 +1,53 @@
+<apex:page standardController="Opportunity" extensions="OA_ChangeRequestController" id="thePage">
+    <apex:form >
+         <style>
+        .pbSubsection{
+            overflow-y: auto;
+            width: 100%;
+            max-height: 350px;
+        }
+    </style>
+        <apex:pageBlock id="thePB" title="Change Request" >
+            <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockSection >
+                <apex:inputField value="{!crOpp.Name}" />
+                <apex:inputField value="{!crOpp.Change_Request_Type__c}" />
+                <apex:outputField value="{!crOpp.StageName}" />
+                <apex:inputField value="{!crOpp.CloseDate}" />
+                <apex:outputField label="Project Initial Cost"  value="{!parentOpp.Amount}" />
+                <apex:inputField label="Submission Date" value="{!crOpp.OA_CR_Submission_Date__c}" />
+                <apex:outputField label="Project Cost After CR"  value="{!crOpp.OA_Change_Request_Amount__c}" />
+                <apex:outputField label="CR Amount"  value="{!crOpp.Amount}" />
+            </apex:pageBlockSection>
+            <br/><br/>
+            <apex:pageBlockSection columns="1">
+                <apex:pageBlockTable value="{!changeRequests}" var="key">
+                    <apex:column headerValue="Period">
+                        <apex:outputText value="{!changeRequests[key].displayMonthYear}"></apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Parent Sales Revenue">
+                        <apex:outputText value="{!changeRequests[key].parentSalesRev} {!parentOpp.CurrencyIsoCode}" ></apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Parent Sales Revenue(Inc. all Closed CR's)" >
+                        <apex:outputText value="{!changeRequests[key].parentSalesRevIncCR} {!parentOpp.CurrencyIsoCode}"></apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Change Request" >
+                        <apex:inputText disabled="{! !changeRequests[key].isEditAllowed}" style="width: 75px;height: 25px;padding: 2px;margin: 4px;" value="{!changeRequests[key].changeAmount}" />{!parentOpp.CurrencyIsoCode}
+                    </apex:column>                    
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+            <apex:outputPanel style="padding:10px;padding-top:0px;" layout="block">
+                <apex:commandLink value="Load More Rows | " action="{!loadMoreRows}" rendered="{!displayingEmptyRows}" reRender="thePB"  />
+                <apex:commandLink value="Hide Empty Rows" action="{!togleEmptyRows}" rendered="{!displayingEmptyRows}" reRender="thePB"  />
+                <apex:commandLink value="Display Empty Rows" action="{!togleEmptyRows}" rendered="{!NOT(displayingEmptyRows) && oppClosedWon}" reRender="thePB"  />
+            </apex:outputPanel>
+            <apex:pageBlockButtons >
+            	<apex:commandButton rendered="{!oppClosedWon}" value="Save" action="{!createChangeRequest}" reRender="thePB" />
+            	<apex:commandButton rendered="{!oppClosedWon}" value="Save & Close" action="{!createChangeRequest}" reRender="thePB">
+                    <apex:param name="close" value="yes"/>
+                </apex:commandButton>
+                <apex:commandButton value="Close" action="{!renderToOpp}" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>   
+    </apex:form>
+</apex:page>

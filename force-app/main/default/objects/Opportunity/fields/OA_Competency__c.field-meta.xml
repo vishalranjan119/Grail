@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OA_Competency__c</fullName>
+    <externalId>false</externalId>
+    <label>Grail Delivery Competency</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Assess Opportunities</fullName>
+                <default>false</default>
+                <label>Assess Opportunities</label>
+            </value>
+            <value>
+                <fullName>Monitor Markets</fullName>
+                <default>false</default>
+                <label>Monitor Markets</label>
+            </value>
+            <value>
+                <fullName>Collect Customer Insights and Intelligence</fullName>
+                <default>false</default>
+                <label>Collect Customer Insights and Intelligence</label>
+            </value>
+            <value>
+                <fullName>Optimize Business Operations</fullName>
+                <default>false</default>
+                <label>Optimize Business Operations</label>
+            </value>
+            <value>
+                <fullName>Activate Sales Strategy</fullName>
+                <default>false</default>
+                <label>Activate Sales Strategy</label>
+            </value>
+            <value>
+                <fullName>Knowledge Optimization</fullName>
+                <default>false</default>
+                <label>Knowledge Optimization</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+            <value>
+                <fullName>Competency 1</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Competency 1</label>
+            </value>
+            <value>
+                <fullName>Competency 2</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Competency 2</label>
+            </value>
+            <value>
+                <fullName>Competency 3</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Competency 3</label>
+            </value>
+            <value>
+                <fullName>Competency 4</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Competency 4</label>
+            </value>
+            <value>
+                <fullName>Competency 5</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Competency 5</label>
+            </value>
+            <value>
+                <fullName>Competency 6</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Competency 6</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

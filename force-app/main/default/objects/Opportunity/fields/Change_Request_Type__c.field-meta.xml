@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_Request_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Change Request Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Timeline Change</fullName>
+                <default>false</default>
+                <label>Timeline Change</label>
+            </value>
+            <value>
+                <fullName>Scope Change</fullName>
+                <default>false</default>
+                <label>Scope Change</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

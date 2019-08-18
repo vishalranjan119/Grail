@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Total Risk Adjusted Pipeline --></label>
+    <name>OA_Total_Risk_Adjusted_Pipeline__c</name>
+</CustomFieldTranslation>

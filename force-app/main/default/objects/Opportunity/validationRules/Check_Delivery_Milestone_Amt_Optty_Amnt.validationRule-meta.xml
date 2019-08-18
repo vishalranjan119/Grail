@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Delivery_Milestone_Amt_Optty_Amnt</fullName>
+    <active>false</active>
+    <description>System should check if Sum of all Delivery Milestone should equals to Opportunity Amount when closing the opportunity.</description>
+    <errorConditionFormula>IF(ISCHANGED(StageName) &amp;&amp; ISPICKVAL(StageName,&#39;Closed Won&#39;) &amp;&amp; (OA_Revenue_Total__c &lt;&gt; Amount), TRUE, FALSE )</errorConditionFormula>
+    <errorMessage>Delivery Milestone Amount Total does not match the Opportunity Amount. Kindly update the Sales Revenue on Delivery Milestone and retry.</errorMessage>
+</ValidationRule>

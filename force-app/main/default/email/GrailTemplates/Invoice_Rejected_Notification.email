@@ -1,0 +1,10 @@
+Dear {!Opportunity.OwnerFullName} ,
+
+Below Invoice has been Rejected. Request you to kindly update the Invoice.
+
+Opportunity Name: {!Opportunity.Name}
+Opportunity Link:  https://ap8.salesforce.com/{!Opportunity.Id}
+Invoice Milestone Link:  https://ap8.salesforce.com/{!OA_Revenue_Forecast__c.Id}
+
+Thanks,
+Grail Insights Team

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Capture the Rate Card Cost without any discount. --></help>
+    <label><!-- Effort Estimate (EE) Price --></label>
+    <name>OA_Rate_Card_Price__c</name>
+</CustomFieldTranslation>

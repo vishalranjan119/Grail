@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Grail_Letter_Head</letterhead>
+    <name>ProposalLaunchForm</name>
+    <style>freeForm</style>
+    <subject>Proposal Launch Form - {!Opportunity.Account} - {!Opportunity.Name}</subject>
+    <textOnly>Dear Allocation Team,
+
+Please find below the details of Proposal Launch form.
+
+Billing Details:
+Client Type: {!Opportunity.OA_Client_Type__c}
+Proposal Name:  {!Opportunity.Name}
+Project Type:  {!Opportunity.OA_Project_Type__c}
+Company Name:  {!Opportunity.Account}
+Proposed Project Start Date:  {!Opportunity.OA_Proposed_Start_Date__c}
+Proposed Project End Date :
+{!Opportunity.OA_Proposed_End_Date__c}
+Closed Date:  {!Opportunity.CloseDate}
+SFDC Proposal ID:        {!Opportunity.OA_SFDC_Proposal_ID__c}
+Proposed Fee: {!Opportunity.OA_Proposed_Fee__c}
+
+Engagement Details:
+Opportunity Source:  {!Opportunity.LeadSource}
+Opportunity Originator Name:
+Primary Client Contact:
+CSO:  {!Opportunity.OwnerFullName}
+CSO Email: {!Opportunity.OwnerEmail}
+Proposal Details:
+Proposal Type:  {!Opportunity.OA_Proposal_Type__c}
+Approved by BU Head:  {!Opportunity.Approved_by_BU_Head__c}
+Proposal Submission Date:  {!Opportunity.OA_Proposal_Submission_Date__c}
+Proposal Format:  {!Opportunity.OA_Proposal_Format__c}
+Business Type:  {!Opportunity.Type}
+Success Criteria: {!Opportunity.OA_Success_Criteria__c}
+Client Context/ Proposal Objective: {!Opportunity.Description}
+Thanks,
+{!Opportunity.OwnerFirstName}</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

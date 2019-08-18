@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Invoicing_Milestone_Amt_Opp_Amt</fullName>
+    <active>true</active>
+    <description>System should check if Sum of all Invoicing Percentage should equals to 100%</description>
+    <errorConditionFormula>AND( 
+ISCHANGED(StageName), 
+ISPICKVAL(StageName,&#39;Closed Won&#39;), 
+ROUND(Invoicing_Milestone_Rev_Total__c,2) != ROUND(OA_Revenue_Total__c,2),
+RecordType.DeveloperName = &#39;Project&#39;)</errorConditionFormula>
+    <errorMessage>Invoicing Milestone Amount Total does not match the Delivery Milestone Amount. Kindly update the Amount on Invoicing Milestone and retry.</errorMessage>
+</ValidationRule>

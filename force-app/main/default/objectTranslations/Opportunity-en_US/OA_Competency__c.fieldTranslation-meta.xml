@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Grail Delivery Competency --></label>
+    <name>OA_Competency__c</name>
+    <picklistValues>
+        <masterLabel>Activate Sales Strategy</masterLabel>
+        <translation><!-- Activate Sales Strategy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Assess Opportunities</masterLabel>
+        <translation><!-- Assess Opportunities --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Collect Customer Insights and Intelligence</masterLabel>
+        <translation><!-- Collect Customer Insights and Intelligence --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Knowledge Optimization</masterLabel>
+        <translation><!-- Knowledge Optimization --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Monitor Markets</masterLabel>
+        <translation><!-- Monitor Markets --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Optimize Business Operations</masterLabel>
+        <translation><!-- Optimize Business Operations --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Others</masterLabel>
+        <translation><!-- Others --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

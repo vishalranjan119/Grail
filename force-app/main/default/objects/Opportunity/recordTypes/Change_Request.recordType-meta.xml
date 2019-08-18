@@ -1,0 +1,722 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Change_Request</fullName>
+    <active>true</active>
+    <businessProcess>Change Request</businessProcess>
+    <description>Only to Capture Change Request for an Ongoing Project</description>
+    <label>Change Request</label>
+    <picklistValues>
+        <picklist>Change_Request_Type__c</picklist>
+        <values>
+            <fullName>Scope Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Timeline Change</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ForecastCategoryName</picklist>
+        <values>
+            <fullName>Best Case</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commit</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Omitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pipeline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>LeadSource</picklist>
+        <values>
+            <fullName>Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employee Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>LinkedIn</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Website</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Loss_Reason__c</picklist>
+        <values>
+            <fullName>Lost to Competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Budget %2F Lost Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Decision %2F Non-Responsive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Price</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Cancelled By Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project De-Prioritized By Client</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OA_Client_Type__c</picklist>
+        <values>
+            <fullName>Internal Client</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard Client</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OA_Competency__c</picklist>
+        <values>
+            <fullName>Activate Sales Strategy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assess Opportunities</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Collect Customer Insights and Intelligence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Knowledge Optimization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monitor Markets</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Optimize Business Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OA_Engagement_Type__c</picklist>
+        <values>
+            <fullName>Ad-hoc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offsite FTE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OnSite FTE</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OA_Lead_Source_of_Opportunity_Originator__c</picklist>
+        <values>
+            <fullName>Advertisements</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cold Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conference%2F Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deloitte Employee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grail Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PR%2F Read About Us in Media or Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prior Business Relationship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OA_Lead_Source_of_Primary_Contact__c</picklist>
+        <values>
+            <fullName>Advertisements</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cold Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conference%2F Trade Show</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deloitte Employee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grail Website</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inbound Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PR%2F Read About Us in Media or Online</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prior Business Relationship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Webinar</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OA_Location__c</picklist>
+        <values>
+            <fullName>Beijing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Johannesburg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Noida</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OA_Offerings__c</picklist>
+        <values>
+            <fullName>Advertisements</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Budgeting %26 Planning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Compliance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Negotiation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ideas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industry Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Industry and Country Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Investment Evaluation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoice and Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Market Forecasting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Market Sizing and Forecasting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Strategy Evaluation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Metrics Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Newsletters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity Evaluation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Organization Structure Mapping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Scouting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing Strategy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Regulatory%2FLegislative Research %26 Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Supply Chain Assessment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Target Identification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Technology Scan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trend Spotting%2FFuture Trend Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vendor Analytics</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OA_Project_Type__c</picklist>
+        <values>
+            <fullName>Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retainer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OA_Proposal_Format__c</picklist>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PowerPoint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Word Memo</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OA_Proposal_Type__c</picklist>
+        <values>
+            <fullName>Capability Deck</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pilot Project</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre-Sales Effort</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing %26 Timing Estimates</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OA_Services__c</picklist>
+        <values>
+            <fullName>Service 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 11</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 13</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 14</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 15</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 16</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 17</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 18</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 19</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 21</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 22</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 23</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 24</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 25</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 26</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 27</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 28</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 31</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 32</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 33</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 34</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 35</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service 9</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>OA_Solutions__c</picklist>
+        <values>
+            <fullName>Battle Cards and Sector Storyboards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brand Tracking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Operations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel and Messaging Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Churn Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitive Benchmarking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Competitive Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Concept Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Planning %26 Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Futurecasting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Knowledge Audit and Synthesis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Knowledge System Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>M%26A Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Market Entry Assessment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Market Monitoring</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Investment Allocation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Others</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Program Strategy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Propensity Analysis</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Purchase Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research Roadmap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Channel Assessment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Segmentation and Buyer Personas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Territory Growth Projections</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Price_By__c</picklist>
+        <values>
+            <fullName>Day</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hour</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Week</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Existing Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Growth</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Business</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

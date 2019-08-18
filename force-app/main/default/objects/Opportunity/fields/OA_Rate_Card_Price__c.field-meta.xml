@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OA_Rate_Card_Price__c</fullName>
+    <description>Field to capture the rate card Cost ONLY. This field will be used for reference purpose only</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Capture the Rate Card Cost without any discount.</inlineHelpText>
+    <label>Effort Estimate (EE) Price</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

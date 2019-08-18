@@ -1,0 +1,88 @@
+<apex:page controller="OA_BR_WeightedGrossPipelineCntrl">
+    <style>
+        .button1 {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-size: 14px;
+        margin: 4px 2px;        
+        }
+        .alignRight {
+        text-align:right !important;    
+        }
+    </style>
+    <apex:includeScript value="{! $Resource.jQuery }"/>
+    <apex:includeScript value="{! $Resource.ExporteTableDataJS }"/>
+    <apex:form >
+        <br/>
+        <div>
+            <apex:outputLabel value="Selected Opportunities" style="font-size:30px;font-weight:bold;"/>
+        </div>
+        
+        <div align="right">
+            <a id="export" class="button1" href="javascript.void(0)">Export</a>           
+        </div>
+        <apex:actionStatus id="status">
+            <apex:facet name="start">
+                <div style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.25; z-index: 1000; background-color: black;">
+                    &nbsp;
+                </div>
+                <div style="position: fixed; left: 0; top: 0; bottom: 0; right: 0; z-index: 1001; margin: 15% 50%">
+                    <div style="display: inline-block; padding: 2px; background-color: #fff; width: 125px;">
+                        <img src="/img/loading.gif" style="float: left; margin: 8px;" />
+                        <span style="display: inline-block; padding: 10px 0px;">Please Wait...</span>
+                    </div>
+                </div>
+            </apex:facet>
+        </apex:actionStatus>
+        <apex:actionFunction name="onFilterChange" status="status" action="{!prepareReportData}" reRender="reportDataTable" />        
+        <br/>
+        <apex:pageBlock title="Specify Criteria">
+            <apex:pageBlockSection columns="2">
+                <apex:inputText label="East NA" style="width: 45px;padding-left: 5px;" value="{!eastCoatsProbability}" />
+                <apex:inputText label="West NA" style="width: 45px;padding-left: 5px;" value="{!westCoatsProbability}" />
+                <apex:inputText label="Europe" style="width: 45px;padding-left: 5px;" value="{!europeProbability}" />
+                <apex:inputText label="APAC & MEA" style="width: 45px;padding-left: 5px;" value="{!apacProbability}" />
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedYear}" label="Year" title="Year" required="true">
+                    <apex:selectOptions value="{!years}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList size="1" onchange="onFilterChange()" value="{!selectedMonth}" label="Month" title="Month" required="true">
+                    <apex:selectOptions value="{!months}"></apex:selectOptions>
+                </apex:selectList>
+            </apex:pageBlockSection>
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Search" action="{!prepareReportData}" reRender="reportDataTable" status="status" />
+            </apex:pageBlockButtons>
+        </apex:pageBlock>
+          <apex:outputLabel value="Note: All monetary amounts reported in USD $000" style="font-weight:bold;"/> 
+        <br/><br/>
+        <apex:pageBlock id="reportDataTable">
+            <apex:pageMessages ></apex:pageMessages>
+            <div id="dvData">
+                
+                
+                <apex:pageBlockTable value="{!dataList}" var="data">
+                    <apex:column headerValue="Region" value="{!data.Region}" />
+                    <apex:column headerValue="Rep" value="{!data.Rep}" />
+                    <apex:column headerValue="Client" value="{!data.AccountName}" />
+                    <apex:column headerValue="Project" value="{!data.OpportunityName}" />
+                    <apex:column headerValue="Weighted Pipeline"  styleClass="alignRight" headerClass="alignRight">
+                        <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!data.WPipeline}" />
+                        </apex:outputText></apex:column>
+                    
+                    <apex:column headerValue="Gross Pipeline"  styleClass="alignRight" headerClass="alignRight">
+                        <apex:outputText value="{0, number, ###,##0}"  >
+                            <apex:param value="{!data.GPipeline}" />
+                        </apex:outputText>
+                    </apex:column>
+                    <apex:column headerValue="Probability" value="{!data.Probability}" styleClass="alignRight" headerClass="alignRight"> 
+                    </apex:column>
+                </apex:pageBlockTable>
+            </div>        
+        </apex:pageBlock>
+      
+    </apex:form>
+</apex:page>

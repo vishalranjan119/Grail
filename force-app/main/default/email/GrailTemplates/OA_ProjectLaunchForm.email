@@ -1,0 +1,73 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<div><br></div><div><br></div>Dear Allocation Team,<br><br>Please find below the details of Project Launch form.<br><br><b>Project Details:<br></b><blockquote><i><u>Client Type:</u></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {!Opportunity.OA_Client_Type__c}<i><u><br>Proposal Name</u></i>: <span style="white-space:pre">	</span>{!Opportunity.Name}<br><u><i>Project Type</i></u>: <span style="white-space:pre">		</span>{!Opportunity.OA_Project_Type__c}<br><u><i>Company Name</i></u>: <span style="white-space:pre">	</span>{!Opportunity.Account}<br><u><i>Engagement Type:</i></u>&nbsp; {!Opportunity.OA_Engagement_Type__c}<br><i><u>Location</u></i>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {!Opportunity.OA_Location__c}<br><i><u>Price By</u></i>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {!Opportunity.Price_By__c}<br><i><u>Currency</u></i>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {!Opportunity.CurrencyIsoCode}<br><i><u>Project Start Date</u></i>:&nbsp; {!Opportunity.OA_Project_Start_Date__c}<br><i><u>Project End Date</u></i>:&nbsp; &nbsp;{!Opportunity.OA_Project_End_Date__c}<br><i><u>SFDC Project ID</u></i>:&nbsp; &nbsp; {!Opportunity.OA_SFDC_Project_ID__c}<br><u style="font-style: italic;">Price to Client:</u>&nbsp; &nbsp; &nbsp; &nbsp; {!Opportunity.OA_Total_Project_Cost__c}<br><i style="text-decoration-line: underline;">Expected Expenses:</i>&nbsp;{!Opportunity.OA_Expenses_OPEs__c}</blockquote>&nbsp;<div>Thanks,<br>{!Opportunity.OwnerFirstName}<br>
+ <table width="557" border="0" cellspacing="0" cellpadding="0"><colgroup><col style="mso-width-source:userset;mso-width-alt:4827;width:99pt" width="132">
+ <col style="mso-width-source:userset;mso-width-alt:8265;width:170pt" width="226">
+ <col style="mso-width-source:userset;mso-width-alt:7277;width:149pt" width="199">
+ </colgroup><tbody><tr style="height:15.0pt" height="20">
+  
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.75pt" height="21">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.75pt" height="21">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.0pt" height="20">
+  
+  
+ </tr>
+ <tr style="height:15.75pt" height="21">
+  
+  
+ </tr>
+</tbody></table></div>]]></td>
+</tr>
+</table>

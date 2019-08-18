@@ -1,0 +1,53 @@
+<table border="0" cellpadding="5" width="600" cellspacing="5" height="400" >
+<tr valign="top" height="50" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="Arial, sans-serif" style="" size="5">Congratulations....We won!</font>]]></td>
+</tr>
+<tr valign="top" height="300" >
+<td tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[<table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="673" style="width:505.0pt;margin-left:5.65pt;border-collapse:collapse;mso-yfti-tbllook:
+ 1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt"><tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes;
+  height:211.5pt"><td width="528" valign="bottom" style="width:396.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-bottom-alt:solid windowtext .5pt;mso-border-right-alt:solid windowtext .5pt;
+  padding:0cm 5.4pt 0cm 5.4pt;height:211.5pt"><p class="MsoNormal"><font size="2" face="Arial, sans-serif"><span lang="EN-US" style="">&nbsp;</span><b style="">{!Opportunity.OwnerFullName}
+has Won the following Project:</b></font></p><p class="MsoNoSpacing"><o:p><font size="2" face="Arial, sans-serif">&nbsp;</font></o:p></p><p class="MsoNoSpacing"><font size="2" face="Arial, sans-serif">Company Name:&nbsp; &nbsp; &nbsp; &nbsp;<span style="white-space:pre">	</span>{!Opportunity.Account}<o:p></o:p></font></p><p class="MsoNoSpacing"><font size="2" face="Arial, sans-serif">Project Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="white-space:pre">	</span>{!Opportunity.Name}<o:p></o:p></font></p><p class="MsoNoSpacing"><font size="2" face="Arial, sans-serif">Competency:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="white-space:pre">	</span>{!Opportunity.OA_Competency__c}<o:p></o:p></font></p><p class="MsoNoSpacing"><o:p><font size="2" face="Arial, sans-serif">&nbsp;</font></o:p></p><p class="MsoNoSpacing"><font size="2" face="Arial, sans-serif">Owner:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="white-space:pre">	</span>{!Opportunity.OwnerFullName}<o:p></o:p></font></p><p class="MsoNoSpacing"><font size="2" face="Arial, sans-serif">Region:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="white-space:pre">	</span>{!Opportunity.Region__c}<o:p></o:p></font></p><p class="MsoNoSpacing"><font face="Arial, sans-serif" size="2">Closed Date:<span style="white-space:pre">			</span>{!Opportunity.CloseDate}</font></p><p class="MsoNoSpacing"><o:p><font size="2" face="Arial, sans-serif">&nbsp;</font></o:p></p><p class="MsoNoSpacing"><font size="2" face="Arial, sans-serif">Currency:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="white-space:pre">	</span>{!Opportunity.CurrencyIsoCode}<o:p></o:p></font></p><p class="MsoNoSpacing"><font size="2" face="Arial, sans-serif">Current Year Revenue:<span style="white-space:pre">	</span>{!Opportunity.OA_CY_Revenue__c}<o:p></o:p></font></p><p class="MsoNormal"><span lang="EN-US"><font size="2" face="Arial, sans-serif">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</font></span></p><p class="MsoNoSpacing"><font face="Arial, sans-serif"><font size="2">Future Year Revenue:<span style="white-space:pre">	</span>{!Opportunity.Future_Revenue__c}</font><o:p></o:p></font></p><p class="MsoNormal"><font face="Arial, sans-serif"><span lang="EN-US" style="">
+  <br><span style="font-size: 11pt;">
+  Click</span><a href="https://ap8.salesforce.com/{!Opportunity.Id}" style="color: black; font-size: 11pt;"> </a></span><b><u><span lang="EN-US" style="font-size: 11pt; color: rgb(48, 84, 150);"><a href="https://ap8.salesforce.com/{!Opportunity.Id}">here</a></span></u></b><span lang="EN-US" style="font-size: 11pt; color: black;"> to view details of the Project<o:p></o:p></span></font></p>
+  <p class="MsoNormal"><span lang="EN-US" style="font-size: 11pt; color: black;"><o:p><font face="Arial, sans-serif">&nbsp;</font></o:p></span></p>
+  </td>
+ </tr>
+</tbody></table><br>]]></td>
+</tr>
+<tr valign="top" height="50" >
+<td tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+</table>

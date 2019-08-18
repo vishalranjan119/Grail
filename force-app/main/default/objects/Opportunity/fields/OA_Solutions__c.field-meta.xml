@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>OA_Solutions__c</fullName>
+    <externalId>false</externalId>
+    <label>Solutions</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Market Entry Assessment</fullName>
+                <default>false</default>
+                <label>Market Entry Assessment</label>
+            </value>
+            <value>
+                <fullName>M&amp;A Support</fullName>
+                <default>false</default>
+                <label>M&amp;A Support</label>
+            </value>
+            <value>
+                <fullName>Futurecasting</fullName>
+                <default>false</default>
+                <label>Futurecasting</label>
+            </value>
+            <value>
+                <fullName>Competitive Benchmarking</fullName>
+                <default>false</default>
+                <label>Competitive Benchmarking</label>
+            </value>
+            <value>
+                <fullName>Market Monitoring</fullName>
+                <default>false</default>
+                <label>Market Monitoring</label>
+            </value>
+            <value>
+                <fullName>Competitive Monitoring</fullName>
+                <default>false</default>
+                <label>Competitive Monitoring</label>
+            </value>
+            <value>
+                <fullName>Segmentation and Buyer Personas</fullName>
+                <default>false</default>
+                <label>Segmentation and Buyer Personas</label>
+            </value>
+            <value>
+                <fullName>Purchase Process</fullName>
+                <default>false</default>
+                <label>Purchase Process</label>
+            </value>
+            <value>
+                <fullName>Brand Tracking</fullName>
+                <default>false</default>
+                <label>Brand Tracking</label>
+            </value>
+            <value>
+                <fullName>Channel and Messaging Analysis</fullName>
+                <default>false</default>
+                <label>Channel and Messaging Analysis</label>
+            </value>
+            <value>
+                <fullName>Concept Testing</fullName>
+                <default>false</default>
+                <label>Concept Testing</label>
+            </value>
+            <value>
+                <fullName>Business Operations</fullName>
+                <default>false</default>
+                <label>Business Operations</label>
+            </value>
+            <value>
+                <fullName>Financial Planning &amp; Analysis</fullName>
+                <default>false</default>
+                <label>Financial Planning &amp; Analysis</label>
+            </value>
+            <value>
+                <fullName>Product Propensity Analysis</fullName>
+                <default>false</default>
+                <label>Product Propensity Analysis</label>
+            </value>
+            <value>
+                <fullName>Churn Analysis</fullName>
+                <default>false</default>
+                <label>Churn Analysis</label>
+            </value>
+            <value>
+                <fullName>Sales Channel Assessment</fullName>
+                <default>false</default>
+                <label>Sales Channel Assessment</label>
+            </value>
+            <value>
+                <fullName>Partner Program Strategy</fullName>
+                <default>false</default>
+                <label>Partner Program Strategy</label>
+            </value>
+            <value>
+                <fullName>Territory Growth Projections</fullName>
+                <default>false</default>
+                <label>Territory Growth Projections</label>
+            </value>
+            <value>
+                <fullName>Battle Cards and Sector Storyboards</fullName>
+                <default>false</default>
+                <label>Battle Cards and Sector Storyboards</label>
+            </value>
+            <value>
+                <fullName>Marketing Investment Allocation</fullName>
+                <default>false</default>
+                <label>Marketing Investment Allocation</label>
+            </value>
+            <value>
+                <fullName>Knowledge Audit and Synthesis</fullName>
+                <default>false</default>
+                <label>Knowledge Audit and Synthesis</label>
+            </value>
+            <value>
+                <fullName>Research Roadmap</fullName>
+                <default>false</default>
+                <label>Research Roadmap</label>
+            </value>
+            <value>
+                <fullName>Knowledge System Development</fullName>
+                <default>false</default>
+                <label>Knowledge System Development</label>
+            </value>
+            <value>
+                <fullName>Others</fullName>
+                <default>false</default>
+                <label>Others</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>7</visibleLines>
+</CustomField>
